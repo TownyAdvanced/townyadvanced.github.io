@@ -4,7 +4,7 @@
 
 - #### Towny
 One of the oldest region management plugins for Minecraft still in development.  
-[Documentation](https://github.com/TownyAdvanced/Towny/wiki) | [GitHub Releases](https://github.com/TownyAdvanced/Towny/releases) | [JavaDocs](https://townyadvanced.github.io/Towny/) | [SpigotMC](https://www.spigotmc.org/resources/towny-advanced.72694/)
+[Documentation](https://github.com/TownyAdvanced/Towny/wiki) | [GitHub Releases](https://github.com/TownyAdvanced/Towny/releases) | [JavaDocs](https://townyadvanced.github.io/javadocs/) | [SpigotMC](https://www.spigotmc.org/resources/towny-advanced.72694/)
 
 ### In addition to Towny, TownyAdvanced also provides these supplemental plugins:
 - #### TownyChat
