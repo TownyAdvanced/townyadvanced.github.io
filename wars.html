@@ -32,7 +32,7 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-    <div class="row">
+    <div class="row" style="margin-top: 2%; padding:10px">
       <div class="two-thirds column" style="margin-top: 5%; align:left">
       	<h3>Towny Advanced Portal</h3>
       </div>
@@ -40,11 +40,13 @@
         <a href="index.html"><img src="images/townyicon.png" align=right style="border-radius:10px"></a>
       </div>      
     </div>
-    <div class="row" style="margin-top: 2%; padding:10px" >
-      <div class="twelve column" style="border-radius:10px; padding:10px">
-      	<p><h1 align=center>Wars: we gottem</h1></p>
+	<hr>
+    <div class="row" style="margin-top: 2%; padding:10px">
+	  <div class="five columns" style="border-radius:10px; padding:10px">
+        <br><br><br>
+		<h3>> <a href="wars.html">War Hub</a> \</h3>
       </div>
-	</div>
+    </div>
     <div class="row" style="margin-top: 2%; padding:10px" >
       <div class="one-third column" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
       	<h5 align=center>Event War</h5>
@@ -70,10 +72,10 @@
     </div>
     <div class="row"  style="margin-top: 2%; padding:10px" >
       <div class="one-third column" style="border-radius:10px;" align=center>
-		<p align=center><a class="button button-primary" href="https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works#ta-toggle-war-event-war">Would you like to know more?</a></p>
+		<p align=center><a class="button button-primary" href="eventwar.html">Would you like to know more?</a></p>
       </div>
       <div class="one-third column" style="border-radius:10px;">
-       	<p align=center><a class="button button-primary" href="https://web.archive.org/web/20140912091755/http://xshade.ca/projects/towny/tutorial/war/">Would you like to know more?</a></p>
+       	<p align=center><a class="button button-primary" href="flagwar.html">Would you like to know more?</a></p>
       </div>
       <div class="one-third column" style="border-radius:10px;">
        	<p align=center><a class="button button-primary" href="https://github.com/TownyAdvanced/SiegeWar">Would you like to know more?</a></p>
@@ -88,17 +90,33 @@
     <div class="row"  style="margin-top: 2%; padding:10px" >
       <div class="one-third column" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
         <p align=center>
-        <h5 align=center>3rd Party</h5>
+        <h5 align=center>TownyWars</h5>
         </p>
         <hr>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean venenatis rutrum ipsum eu tempor. Vestibulum mattis fermentum finibus. Sed ullamcorper vulputate massa vitae tristique. Nam semper tortor vitae lectus consequat eleifend. Vivamus fringilla, dolor sed dapibus molestie, libero libero semper turpis, id efficitur eros dui venenatis elit. Suspendisse ut massa eget mi ultricies consectetur at aliquam risus. In semper sagittis dui, et bibendum mauris cursus quis. In porta ullamcorper augue, nec aliquam magna faucibus non. In aliquam, purus porttitor ornare tristique, massa ipsum laoreet nulla, viverra porttitor lectus nisi ut lorem. Curabitur tristique ligula vel lacinia sagittis. Nam a maximus lorem. Phasellus quis suscipit nibh.
+        A simple plugin that provides arcade wars with your Towny plugin. The author of the plugin is karlov_m. 
+        TownyWars is a fairly new plugin, but it is already able to provide simple, and most importantly interesting wars between towns.<br><br>
+        
+        How it works<br>
+		There are neutral towns and non-neutral ones. Only non-neutral cities can declare war. After the Declaration of war,
+		both cities have points that are calculated from the number of citizens. When a citizen from one city is killed by a citizen from another, 
+		one point is taken away from the town of the victim and transferred to the attacking city. During the war, both towns cannot turn off the PvP. 
+		The winner gets the entire territory of the losing town. Other towns can join the war as allies of one of the parties.
       </div>
       <div class="one-third column" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
         <p align=center>
-        <h5 align=center>3rd Party</h5>
+        <h5 align=center>BetterTownyWars</h5>
         </p>
         <hr>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean venenatis rutrum ipsum eu tempor. Vestibulum mattis fermentum finibus. Sed ullamcorper vulputate massa vitae tristique. Nam semper tortor vitae lectus consequat eleifend. Vivamus fringilla, dolor sed dapibus molestie, libero libero semper turpis, id efficitur eros dui venenatis elit. Suspendisse ut massa eget mi ultricies consectetur at aliquam risus. In semper sagittis dui, et bibendum mauris cursus quis. In porta ullamcorper augue, nec aliquam magna faucibus non. In aliquam, purus porttitor ornare tristique, massa ipsum laoreet nulla, viverra porttitor lectus nisi ut lorem. Curabitur tristique ligula vel lacinia sagittis. Nam a maximus lorem. Phasellus quis suscipit nibh.
+        BetterTownyWars provides new mechanics for letting your players to fight between their nations with rewards for the winner, allowing them to be neutral too.​<br><br>
+
+		Wars can be declared by a player if he/she has permissions. The plugin actually supports two types of war, and the winner earns a certain amount of money from the other nation bank.<br><br>
+
+		War types
+		<ul>
+			<li>Nation vs Nation: Two nations against each other and the first one to kill a certain % of the residents of the enemy nation wins.</li>
+			<li>Town vs Town: Two towns fight and the first one to kill a certain % of the residents of the enemy nation wins.</li>
+		</ul>
+		A war can be ended if all of their members send a peace request or when it reaches the maximum duration time (disabled at the moment).
       </div>
       <div class="one-third column" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
         <p align=center>
@@ -110,10 +128,10 @@
     </div>
     <div class="row" style="margin-top: 2%; padding:10px" >
       <div class="one-third column" style="border-radius:10px">
-		<p align=center><a class="button button-primary" href="wars\eventwar.html">Would you like to know more?</a></p>
+		<p align=center><a class="button button-primary" href="https://www.spigotmc.org/resources/townywars.80038/">Would you like to know more?</a></p>
       </div>
       <div class="one-third column" style="border-radius:10px">
-       	<p align=center><a class="button button-primary" href="wars\flagwar.html">Would you like to know more?</a></p>
+       	<p align=center><a class="button button-primary" href="https://www.spigotmc.org/resources/⚔-bettertownywars-⚔-fight-glory.65216/">Would you like to know more?</a></p>
       </div>
       <div class="one-third column" style="border-radius:10px">
        	<p align=center><a class="button button-primary" href="wars\siegewar.html">Would you like to know more?</a></p>

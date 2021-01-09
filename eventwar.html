@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Towny Advanced - Event War</title>
+  <meta name="description" content="Event War guide.">
+  <meta name="author" content="LlmDl">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Oxygen:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" href="images/favicon.ico">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row" style="margin-top: 2%; padding:10px">
+      <div class="two-thirds column" style="margin-top: 5%; align:left">
+      	<h3>Towny Advanced Portal</h3>
+      </div>
+      <div class="one-third column" style="margin-top: 5%; align:right">
+        <a href="index.html"><img src="images/townyicon.png" align=right style="border-radius:10px"></a>
+      </div>      
+    </div>
+	<hr>
+    <div class="row" style="margin-top: 2%; padding:10px">
+	  <div class="five columns" style="border-radius:10px; padding:10px">
+        <br><br><br>
+		<h3>> <a href="wars.html">War Hub</a> \ Event War</h3>
+		</div>
+      <div class="seven columns" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
+		<p><b>Current Status:</b> Included in Towny.jar.</p>
+		<p><b>Future Status:</b> Major overhaul happening this year, with eventual plans to separate it into EventWar.jar.</p>
+      </div>
+	</div>
+    <div class="row" style="margin-top: 2%; padding:10px">
+	  <div class="twelve columns">
+		<div style="background-color:#f2f2f2; border-radius:10px; padding:10px; margin-bottom: 5%">
+			<h4>Prerequisites:</h4>
+			<ul>
+				<li><code>using_economy: true</code> in your towny config.yml.</li>
+				<li>At least 2 nations which consider each other enemies.</li>
+				<li>An admin using <code>/ta toggle war</code> to being the war.</li>
+			</ul>
+
+			<h4>Introduction/Game-play:</h4>
+				Event War consists of a server-wide war, where every nation which has at least one mutually-enemy (both nations are enemied towards each other,) is added into a war over townblocks' "HP" and killing Mayors and Kings, which results in a monetary reward.<br><br>
+	
+				Event War can be completely non-destructive, with no transfer of land to the victors, no transfering of Towns to conquering Nations, and no griefing in claimed land (even with the explosion-revert enabled.)<br><br>
+				
+				Or, Event War can be a punishing, Towns-stealing-land, Nations-conquering-Towns, greif-fest. Event War is entirely configurable.<br><br>
+				
+				Event War makes use of Towny's explosion-revert-system inside of Towns, allowing for TNT and TNT cannons to be used freely, with blocks regenerating after 60 seconds.<br>
+				Event War also makes generous use of the Towny Jail plots, players killed in enemy territory will be transferred to the enemy jail to live as a POW (prisoner-of-war.)
+				Jail breaks will occur either via explosives opening a wall, or the Jail plot's HP being dropped to 0.<br><br>
+				
+				Event War begins with every townblock owned by Towns in the Nations involved gaining a HP stat. Homeblocks can have a larger HP than normal TownBlocks. Enemy players will lower the HP if they out-number the Allied players in the townblock.
+				Allied players outnumbering the enemies will result in the TownBlock gaining HP (if healing isn't disabled in the config.) When a TownBlock is dropped to 0 HP is it permanently removed from the war. It can be configured so that the winning Town gains the TownBlock permanently.<br><br>
+			
+				A Town can be knocked out of a war when their Home Block falls or if their Mayor is killed. A Nation can be knocked out of a war if its capital city is knocked out of the war, or if the King is killed. Points in war given for the following:
+				<ul>
+					<li>A enemy killed: 1 </li>
+					<li>A townblock stolen: 1 </li>
+					<li>A town knocked out of the war: 10 </li>
+					<li>A nation knocked out of the war: 100 </li>
+				</ul>
+				
+				Event War ends when there is only one nation who's Home Block has not been conquered or when the admin toggles war off. Although the townblocks are restored at the end of war, the damage from any griefing is permanent.
+				<br><br>
+			<h4>Feature Breakdown:</h4>
+			<ul>
+				<li><b>/towny war hud:</b> Useful during war is the <code>/towny war hud</code> command which will make a scoreboard appear for the player, which details points and properties of the townblock they are standing in.</li>
+				<li><b>/towny war participants {page #}:</b> Also useful is the <code>/towny war participants {page #}</code> command. It shows a list of towns and their nation who are in the war event.The list highlights enemies, allies and capital towns. While war is in effect, each competing town has a health points property attached to it.</li>
+				<li><b>is_jailing_attacking_enemies:</b> When players are killed in a town where they are considered to be enemies in the war, they may be sent to the town's Jail. This is configurable at <code>jail.is_jailing_attacking_enemies: 'false'</code>. If the jail plot is attacked and has its HP reduced to 0, any prisoners-of-war imprisoned there will be let free in a 'jailbreak'. POWs are also freed if the town they are kept in falls out of the war.</li>
+				<li><b>price_nation_neutrality:</b> Nations can also pay a daily Neutrality cost to avoid taking part in a war. The cost of neutrality is set in the config.yml using <code>price_nation_neutrality: 100.0</code>. In this example, a nation would pay 100 dollars from its nationbank each 'Towny Day'. <code>/n toggle neutral</code> will set the status.</li>
+				<li><b>warning_delay:</b> The amount of time in seconds on the event war countdown, begun after using <code>/ta toggle war</code>.</li>
+				<li><b>towns_are_neutral:</b> During war Nations fight each other. Towns without a nation are not included, cannot score points and cannot have their townblocks griefed. The config has the option <code>towns_are_neutral: 'true'</code> if you would like nation-less towns to still be able to fight and be attacked (but still not score points.)</li>
+				<li><b>only_attack_borders:</b> When true, only plots bordering the wilderness and fallen townblocks can be attacked. This prevents players going in to directly attack a homeblock.</li>
+				<li><b>healable:</b> When true, allies can heal TownBlocks' HP stat.</li>
+				<li><b>firework_on_attacked:</b> When a townblock is under attack, fireworks appear above. Red for damage, red creeperhead for a won townblock, and green when a townblock is being healed by a defender. Fireworks can be turned off in the config at <code>war.event.plots.firework_on_attacked</code>.</li>
+				<li><b>remove_on_monarch_death:</b> When true, if a mayor is killed their Town is taken out of the Event War. If that mayor is the king of a Nation, that nation will also be removed from the war.</li>
+				<li><b>allow_block_griefing</b> If you would like to bybass the WarzoneBlockPermissions fine-grained approach and allow anyone to do anything during war you can set the the config's <code>war.event.allow_block_griefing</code> option to true.</li>
+				<li><b>town_block_hp:</b> the HP stat of normal TownBlocks.</li>
+				<li><b>home_block_hp:</b> the HP stat of Town homeblocks.</li>
+				<li><b>base_spoils:</b> The amount which is added to the War Chest at the start of each Event War.</li>
+				<li><b>wartime_town_block_loss_price:</b> This amount is taken from the losing town for each plot lost. If it cannot be paid, the town is removed from the war.</li>
+				<li><b>price_death_wartime:</b> This amount is taken from the player if they die during the event. If it cannot be paid, the Town is removed from the war.</li>
+				<li><b>costs_townblocks:</b> If set to true when a town drops an enemy townblock's HP to 0, the attacking town gains a bonus townblock, and the losing town gains a negative (-1) bonus townblock.</li>
+				<li><b>winner_takes_ownership_of_townblocks:</b> If set to true when a town drops an enemy townblock's HP to 0, the attacking town takes full control of the townblock. One available (bonus) claim is given to the victorious town, one available (bonus) claim is removed from the losing town. Will not have any effect if war.event.winner_takes_ownership_of_town is set to true.</li>
+				<li><b>winner_takes_ownership_of_town:</b> If set to true when a town knocks another town out of the war, the losing town will join the winning town's nation. The losing town will enter a conquered state and be unable to leave the nation until the conquered time has passed.</li>
+				<li><b>conquer_time:</b> The number of Towny new days until a conquered town loses its conquered status and can use <code>/n leave</code>.
+				<li><b>min_height:</b> When enemies are below this Y-level, they do not count as attackers.</li>
+				<li><b>Warzone Block Permissions:</b> Event War allows for a great deal of customizability when it comes to griefing. The config's <code>editable_materials</code> applies to Event War and Flag War. This means you may set which blocks can be placed and broken by players in the war. By default that list includes: <code>tnt,fence,ladder,wood_door,iron_door,fire</code>. Switch, Item_use, Fire and Explosion protections can be overriden during Event War as well. <code>explosions_break_blocks</code> & <code>explosions_regen_blocks: 'true'</code> will determine whether the explosions break blocks and whether the explosion will regenerate or if the griefing is permanent. The <code>explosions_ignore_list</code> is a configurable list of blocks which will not explode.</li>
+
+			</ul>
+		</div>
+	  </div>	
+	</div>
+	
+	
+    <div class="twelve column">
+		<br><br><br><br><br><hr>
+		<p align=center>Website powered by <a href="http://getskeleton.com">Skeleton</a></p>
+	</div>
+  </div>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
