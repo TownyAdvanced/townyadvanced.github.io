@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Wars - Towny Advanced Plugin Web Portal</title>
+  <meta name="description" content="Hub Page for the War types available for Towny.">
+  <meta name="author" content="LlmDl">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Oxygen:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" href="images/favicon.ico">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row" style="margin-top: 2%; padding:10px">
+      <div class="two-thirds column" style="margin-top: 5%; align:left">
+      	<h3>Towny Advanced Portal</h3>
+      </div>
+      <div class="one-third column" style="margin-top: 5%; align:right">
+        <a href="index.html"><img src="images/townyicon.png" align=right style="border-radius:10px"></a>
+      </div>      
+    </div>
+	<hr>
+    <div class="row" style="margin-top: 2%">
+	  <div class="five columns" style="border-radius:10px">
+		<h3>> <a href="wars.html">War Hub</a> \</h3>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 2%; padding:10px" >
+      <div class="one-third column" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
+      	<h5 align=center>Event War</h5>
+        <hr>
+		<p>Event War is built into Towny.jar. It is begun using "/ta toggle war" and presently is restricted to nation vs nation wars and requires an admin or commandblock to activate.</p>
+		<p>Event War does not persist between reloads/server stops. Event war is very versatile as far as configuration and allows for completely non-destructive wars for money, up to wars involving complete territorial control and money.</p>        
+		<p>Event War will be recieving a significant update expanding its possibilities towards player-initiated war, war perisistance across server restarts, and wars involving non-nation-vs-nation entities.</p>
+      </div>
+      <div class="one-third column" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
+        <h5 align=center>Flag War</h5>
+        <hr>
+        <p>Flag War is built into Towny.jar. When the config "allow_attacks" is true all enemy-nations will be able to start nation vs nation combat with territory control enabled.</p>
+        <p>Flag War is 24/7 and can be very punishing in regards to towns being able to suffer tremendous loss of territorial control.</p>
+        <p>Flag War is transitioning towards becoming a separate plugin run along-side Towny.jar.</p>
+      </div>
+      <div class="one-third column" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
+        <h5 align=center>Siege War</h5>
+        <hr>
+		<p>Siege War is available as a separate plugin, allowing for player-enabled, multi-day long Sieges.</p>
+		<p>Sieges are conducted by Nations on Towns resulting in a geo-political battle for influential territorial control. Sieges are non-destructive of town lands and only come with monetary punishments, negated with the Towny Bankruptcy system.</p>
+		<p>Siege War also supports 'casual' and 'cross-timezone' player bases. Each siege is typically of a moderate duration (e.g. 3 days), which has the advantage of allowing both 'dedicated' and 'casual/cross-timezone' players to become involved and contribute meaningfully to most wars.</p>
+      </div>
+    </div>
+    <div class="row"  style="margin-top: 2%; padding:10px" >
+      <div class="one-third column" style="border-radius:10px;" align=center>
+		<p align=center><a class="button button-primary" href="eventwar.html">Would you like to know more?</a></p>
+      </div>
+      <div class="one-third column" style="border-radius:10px;">
+       	<p align=center><a class="button button-primary" href="flagwar.html">Would you like to know more?</a></p>
+      </div>
+      <div class="one-third column" style="border-radius:10px;">
+       	<p align=center><a class="button button-primary" href="siegewar.html">Would you like to know more?</a></p>
+      </div>
+    </div>
+	<hr>
+    <div class="row" style="margin-top: 2%; padding:10px">
+      <div class="twelve column" style="border-radius:10px; padding:10px">
+        <p><h1 align=center>3rd party war plugins</h1></p>
+      </div>
+	</div>
+    <div class="row"  style="margin-top: 2%; padding:10px" >
+      <div class="one-third column" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
+        <p align=center>
+        <h5 align=center>TownyWars</h5>
+        </p>
+        <hr>
+        A simple plugin that provides arcade wars with your Towny plugin. The author of the plugin is karlov_m. 
+        TownyWars is a fairly new plugin, but it is already able to provide simple, and most importantly interesting wars between towns.<br><br>
+        
+        How it works<br>
+		There are neutral towns and non-neutral ones. Only non-neutral cities can declare war. After the Declaration of war,
+		both cities have points that are calculated from the number of citizens. When a citizen from one city is killed by a citizen from another, 
+		one point is taken away from the town of the victim and transferred to the attacking city. During the war, both towns cannot turn off the PvP. 
+		The winner gets the entire territory of the losing town. Other towns can join the war as allies of one of the parties.
+      </div>
+      <div class="one-third column" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
+        <p align=center>
+        <h5 align=center>BetterTownyWars</h5>
+        </p>
+        <hr>
+        BetterTownyWars provides new mechanics for letting your players to fight between their nations with rewards for the winner, allowing them to be neutral too.​<br><br>
+
+		Wars can be declared by a player if he/she has permissions. The plugin actually supports two types of war, and the winner earns a certain amount of money from the other nation bank.<br><br>
+
+		War types
+		<ul>
+			<li>Nation vs Nation: Two nations against each other and the first one to kill a certain % of the residents of the enemy nation wins.</li>
+			<li>Town vs Town: Two towns fight and the first one to kill a certain % of the residents of the enemy nation wins.</li>
+		</ul>
+		A war can be ended if all of their members send a peace request or when it reaches the maximum duration time (disabled at the moment).
+      </div>
+      <div class="one-third column" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
+        <p align=center>
+        <h5 align=center>Another 3rd Party</h5>
+		</p>
+        <hr>
+        Your plugin here?
+        <hr>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean venenatis rutrum ipsum eu tempor. Vestibulum mattis fermentum finibus. Sed ullamcorper vulputate massa vitae tristique. Nam semper tortor vitae lectus consequat eleifend. Vivamus fringilla, dolor sed dapibus molestie, libero libero semper turpis, id efficitur eros dui venenatis elit. Suspendisse ut massa eget mi ultricies consectetur at aliquam risus. In semper sagittis dui, et bibendum mauris cursus quis.
+      </div>
+    </div>
+    <div class="row" style="margin-top: 2%; padding:10px" >
+      <div class="one-third column" style="border-radius:10px">
+		<p align=center><a class="button button-primary" href="https://www.spigotmc.org/resources/townywars.80038/">Would you like to know more?</a></p>
+      </div>
+      <div class="one-third column" style="border-radius:10px">
+       	<p align=center><a class="button button-primary" href="https://www.spigotmc.org/resources/⚔-bettertownywars-⚔-fight-glory.65216/">Would you like to know more?</a></p>
+      </div>
+      <div class="one-third column" style="border-radius:10px">
+       	<p align=center><a class="button button-primary" href="wars.html">Would you like to know more?</a></p>
+      </div>
+    </div>
+    <div class="twelve column" style="margin-top: 2%">
+		<br><br><br><br><br><hr>
+		<p align=center>Website powered by <a href="http://getskeleton.com">Skeleton</a></p>
+	</div>
+  </div>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
