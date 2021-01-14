@@ -41,27 +41,29 @@
       </div>      
     </div>
 	<hr>
-    <div class="row" style="margin-top: 2%; padding:10px">
-	  <div class="five columns" style="border-radius:10px; padding:10px">
-        <br><br><br>
+    <div class="row">
+	  <div class="twelve columns" style="border-radius:10px">
 		<h3>> <a href="wars.html">War Hub</a> \ Flag War</h3>
-		</div>
-      <div class="seven columns" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
+      </div>
+	</div>
+	<div class="row">
+	  <div class="five columns" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
+		<h4>Prerequisites:</h4>
+			<ul>
+				<li><code>using_economy: true</code> in your towny config.yml.</li>
+				<li><code>war.enemy.allow_attacks: 'true'</code> in your towny config.yml</li>
+				<li>War is only between nations.</li>
+				<li>Towns not in a nation cannot go to war.</li>
+			</ul>
+	  </div>
+	  <div class="seven columns" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
 		<p><b>Current Status:</b> Included in Towny.jar.</p>
 		<p><b>Future Status:</b> Currently under-going transition to becoming a separate FlagWar.jar.</p>
       </div>
 	</div>
-    <div class="row" style="margin-top: 2%; padding:10px">
+    <div class="row" style="margin-top: 2%">
 	  <div class="twelve columns">
 		<div style="background-color:#f2f2f2; border-radius:10px; padding:10px; margin-bottom: 5%">
-			<h4>Prerequisites:</h4>
-				<ul>
-					<li><code>using_economy: true</code> in your towny config.yml.</li>
-					<li><code>war.enemy.allow_attacks: 'true'</code> in your towny config.yml</li>
-					<li>War is only between nations.</li>
-					<li>Towns not in a nation cannot go to war.</li>
-				</ul>
-
 			<h4>How Does Flag War Work?:</h4>
 				Nation A decides that Nation B sucks. The King declares them enemies using the <code>/nation enemy add NationB</code> command.<br><br>
 				
