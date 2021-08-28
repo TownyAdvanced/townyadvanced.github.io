@@ -1,127 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Towny Advanced - Flag War</title>
-  <meta name="description" content="Flag War guide.">
-  <meta name="author" content="LlmDl">
+        <!-- Basic Page Needs -->
+        <meta charset="utf-8">
+        <title>Towny Advanced - FlagWar</title>
+        <meta name="description" content="A basic overview of Towny Advanced's FlagWar war system.">
+        <meta name="author" content="LlmDl, FlagCourier">
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Oxygen:400,300,600" rel="stylesheet" type="text/css">
+        <!-- FONT -->
+        <link href="//fonts.googleapis.com/css?family=Oxygen:400,300,600" rel="stylesheet" type="text/css">
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/skeleton.css">
 
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" href="images/favicon.ico">
+        <!-- Favicon -->
+        <link rel="icon" href="images/favicon.ico">
 
-</head>
-<body>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row" style="margin-top: 2%; padding:10px">
+                <div class="two-thirds column" style="margin-top: 5%; align:left">
+                    <h3>Towny Advanced Portal</h3>
+                    <em><a href="wars.html" title="WarHub">Visit the TownyAdvanced War Hub</a></em>
+                </div>
+                <div class="one-third column" style="margin-top: 5%; float:right; text-align:right">
+                    <a href="index.html">
+                        <img src="images/townyicon.png" alt="Return to the Main Hub" style="border-radius:10px">
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class = "row">
+                <div class = "twelve columns" style="border-radius:10px; text-align:center">
+                    <h2>Towny Advanced's FlagWar</h2>
+		        </div>
+	        </div>
+	        <div class="row">
+	            <div class="five columns" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
+		            <strong>Quirks:</strong>
+                    <ul style="margin-left:2.5%; margin-right:2.5%">
+                        <li>FlagWar is a <em>Nation Vs Nation</em> war system; Stateless Towns cannot participate.</li>
+                        <li>FlagWar works on plots of any Town among rival Nations.</li>
+                    </ul>
+                </div>
+                <div class="seven columns" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
+                    <strong>Current Status:</strong><br>
+                    <div style="margin-left:2.5%; margin-right:2.5%">
+                        Branched off onto it's own addon. <em>(Since Towny 0.97.0.14+)</em>
+                    </div>
+                    <div style="text-align:center">
+                        <a href="https://github.com/TownyAdvanced/FlagWar/releases">
+                            Latest&nbsp;Release&nbsp;(GitHub)
+                        </a>
+                        &nbsp;&nbsp;
+                        <a href="https://github.com/TownyAdvanced/FlagWar/wiki">
+                            FlagWar&nbsp;Wiki
+                        </a>
+                    </div>
+                    <br>
+                    <strong>Previous Status:</strong><br>
+                    <div style="margin-left:2.5%; margin-right:2.5%">
+                        Included in Towny <em>(Up to version 0.97.0.13)</em>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 2%">
+                <div class="twelve columns">
+                    <div style="background-color:#f2f2f2; border-radius:10px; padding:10px; margin-bottom: 5%">
+                        <h4>How Does FlagWar Work?:</h4>
+                        <p style="text-indent:20px">
+                            <em>Nation A</em> decides that <em>Nation B</em> sucks. <em>Nation A's King</em> declares
+                            them to be enemies using Towny's <code>/nation enemy add [Nation_B]</code> command.
+                        </p>
+                        <p style="text-indent:20px">
+                            The Residents of <em>Nation A</em> can now attack any of the Towns within <em>Nation B</em>.
+                            In order to attack, Residents first need to obtain some <em>oak fence posts</em>
+                            (configurable) so that they can plant their <em>War Flag</em> and dispute the plot(s) of
+                            <em>Nation B</em> as their own.
+                        </p>
+                        <p style="text-indent:20px">
+                            The flag&#8209;bearer is the Player who will be placing the War Flag. When the plot has been
+                            won over, the plot will be claimed as part of the flag&#8209;bearer’s Town (so make sure
+                            they have extra plots available to claim).
+                        </p>
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row" style="margin-top: 2%; padding:10px">
-      <div class="two-thirds column" style="margin-top: 5%; align:left">
-      	<h3>Towny Advanced Portal</h3>
-      </div>
-      <div class="one-third column" style="margin-top: 5%; align:right">
-        <a href="index.html"><img src="images/townyicon.png" align=right style="border-radius:10px"></a>
-      </div>      
-    </div>
-	<hr>
-    <div class="row">
-	  <div class="twelve columns" style="border-radius:10px">
-		<h3>> <a href="wars.html">War Hub</a> \ Flag War</h3>
-      </div>
-	</div>
-	<div class="row">
-	  <div class="five columns" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
-		<h4>Prerequisites:</h4>
-			<ul>
-				<li><code>using_economy: true</code> in your towny config.yml.</li>
-				<li><code>war.enemy.allow_attacks: 'true'</code> in your towny config.yml</li>
-				<li>War is only between nations.</li>
-				<li>Towns not in a nation cannot go to war.</li>
-			</ul>
-	  </div>
-	  <div class="seven columns" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
-		<p><b>Current Status:</b> Included in Towny.jar.</p>
-		<p><b>Future Status:</b> Currently under-going transition to becoming a separate FlagWar.jar.</p>
-      </div>
-	</div>
-    <div class="row" style="margin-top: 2%">
-	  <div class="twelve columns">
-		<div style="background-color:#f2f2f2; border-radius:10px; padding:10px; margin-bottom: 5%">
-			<h4>How Does Flag War Work?:</h4>
-				Nation A decides that Nation B sucks. The King declares them enemies using the <code>/nation enemy add NationB</code> command.<br><br>
-				
-				The residents of NationA can now attack the towns of NationB. In order to attack, residents first need to obtain some fence posts so that they can raise their flag and dub the plots of NationB as their own.<br><br>
+                        <h4>Attacking:</h4>
+                        <ul style="margin-left:5%; margin-right:5%">
+                            <li>You cannot attack if you are a Server Operator (OP).</li>
+                            <li>You cannot attack a Nation that is Neutral / Peaceful.</li>
+                            <li>You cannot attack while being in a Neutral Nation.</li>
+                            <li>You can only attack the border plots of enemy Towns. (configurable)</li>
+                            <li>You can only place flags on the surface. They sky should not be obstructed.</li>
+                            <li>Therefore, you cannot place flags in worlds with a ceiling. (E.g. Nether worlds)</li>
+                        </ul>
 
-				The flag bearer is the player who will be placing the flag. When the plot has been won over, the plot will be claimed as part of the flagbearer’s town (so make sure they have extra plots available to claim).<br><br>
-	
-			<h4>Attacking:</h4>
-				<ul>
-					<li>You cannot attack if you are a server OP.</li>			
-					<li>You cannot attack a nation that is neutral.</li>
-					<li>You cannot attack while being in a neutral nation.</li>
-					<li>You can only attack the borders plots.</li>
-					<li>You can only place flags on the surface.</li>
-				</ul>
-			
-				You can also not attack a nation with less than <code>war.enemy.min_players_online_in_nation</code> players online and 
-				the town you’re attacking must have more than <code>war.enemy.min_players_online_in_town</code> player online. 
-				These same requirements are in place for you as well, so you must have the minimum in both cases. 
-				This is so that the target can retaliate as well as know what’s going on.<br><br>
-				
-				Attacking a nation will cause you to become their enemies. 
-				This allows for the target to retaliate immediately without waiting for the target’s king or his assistants to come online.<br><br>
+                        <p style="text-indent:20px">
+                            You also cannot attack a Nation with less Players online than defined by the
+                            <code>player_limits.min_online_in_nation</code> config node, and the Town you’re attacking
+                            must have more online Players than defined by <code>player_limits.min_online_in_Town</code>.
+                            These same requirements are in place for your nation as well, so both parties must meet the
+                            minimum Player requirements. This is so that the target can retaliate as well as know what’s
+                            going on.
+                        </p>
 
-				Towny will automatically place a block of wool for the flag, as well as a light source on top. 
-				In the sky you will notice a large beacon so that the defenders know where to go. 
-				The wool will animate from green to red as time progresses. 
-				After the wool has gone red, the attacker will have held out long enough that they win the area.<br><br>
-				
-			<h4>Defending:</h4>
-				Once an attack has started. Teleport to the town under attack. Scan the sky for the beacon and make your way to it.
-				The flag will be on the surface. Kill your enemies and make your way to their flag. Destroy the cloth part of the flag to cancel the attack.<br><br>
-				
-			<h4>Economic Costs:</h4>
-				<ul>
-					<li>Attacking does have a cost. Whenever a player places a flag, he or she is charged. The player is also checked if they can afford the repercussions of a successful or failed attack.</li>
-					<li>Whenever a Defender breaks the flag, the Attacker is forced to pay a fee.</li>
-					<li>If an attack is successful, there will be a charge depending on the situation.</li>
-					<ul>
-						<li>First, there are different charges for both Homeblocks and normal plots.
-						<li>Second, the charge will be either a pilllage fee where the Defending Town pays the Flagbearer, or it will be a rebuilding cost where the Flagbearer must pay the Town under attack. This offers a couple of diffrent modes of play.
-					</ul>
-				</ul>
-			<h4>Further Notes:</h4>
-				<ul>
-					<li>While the flag is under dispute, block permissions are changed. However, depending on the server setup, you might not gain full destruction capabilities until after the plot has been won.</li>
-				</ul>
-		</div>
-	  </div>	
-	</div>
-	
-	
-    <div class="twelve column">
-		<br><br><br><br><br><hr>
-		<p align=center>Website powered by <a href="http://getskeleton.com">Skeleton</a></p>
-	</div>
-  </div>
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-</body>
+                        <p style="text-indent:20px">
+                            Attacking a Nation will automatically add your Nation to defenders' enemies list. This
+                            allows for the defending Nation to retaliate immediately without waiting for their king or
+                            assistants to come online.
+                        </p>
+
+                        <p style="text-indent:20px">
+                            Towny will automatically place a Timer Block for the flag (traditionally, a colored wool
+                            block), as well as a light source on top. In the sky you will notice a large beacon so that
+                            the defenders know where to go. The wool will animate from green to red as time progresses.
+                            After the wool has gone red, the attacker will have held out long enough that they win the
+                            area.
+                        </p>
+
+                        <h4>Defending:</h4>
+                        <p style="text-indent:20px">
+                            Once an enemy attack has started, you'll want to route it quickly. Take note of the global
+                            chat, as <em>Towny Plot Coordinates</em> will have been broadcast to the whole server. Use
+                            whatever means you can to make your way there. You can use <code>/towny map</code> to see
+                            your current coordinates.
+                        </p>
+
+                        <p style="text-indent:20px">
+                            Once near the coordinates, you can start to scan the sky for a war beacon and make your way
+                            to it. (It's a floating cube, and it won't always render.) The <em>War Flag</em> will be on
+                            the surface. Kill your enemies and make your way to their flag. Destroy the Timer Block (the
+                            block above the fence post) to cancel the attack.
+                        </p>
+
+                        <h4>Economic Costs:</h4>
+                        <ul style="margin-left:5%; margin-right:5%">
+                            <li>
+                                Attacking comes at a cost. Whenever a player places a flag, they are charged a staking
+                                fee. The player is also checked for if they can afford the repercussions of a successful
+                                or failed attack.
+                            </li>
+                            <li>
+                                Whenever a Defender breaks the flag, the Attacker is forced to pay an additional fee to
+                                the defending Town.
+                            </li>
+                            <li>There are different charges for both Home blocks and normal plots.</li>
+                            <li>
+                                The charges can be either a pillage fee, where the Defending Town pays the
+                                flag&#8209;bearer, or it will be a rebuilding cost where the flag&#8209;bearer must pay
+                                the Town under attack. This offers a couple of different modes of play.
+                            </li>
+                        </ul>
+                    
+                        <h4>Further Notes:</h4>
+                        <ul style="margin-left:5%; margin-right:5%">
+                            <li>
+                                While the <em>war flag</em> is under dispute, block permissions are changed. However,
+                                depending on the server setup, you might not gain full destruction capabilities until
+                                after the plot has been won.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="twelve column" style="text-align:center">
+                <br><br><br><br><br><hr>
+                <footer>
+                    Website powered by <a href="http://getskeleton.com">Skeleton</a> and
+                    <a href="https://pages.github.com/">GitHub Pages</a>
+                </footer>
+            </div>
+        </div>
+    </body>
 </html>
