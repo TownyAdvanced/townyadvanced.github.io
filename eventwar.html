@@ -50,69 +50,176 @@
 	  <div class="five columns" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
 	  	<h4>Prerequisites:</h4>
 			<ul>
-				<li><code>using_economy: true</code> in your towny config.yml.</li>
-				<li>At least 2 nations which consider each other enemies.</li>
-				<li>An admin using <code>/ta toggle war</code> to being the war.</li>
+				<li>Towny 0.97.2.16 or newer.</li>
 			</ul>
 	  </div>
 	  <div class="seven columns" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
-		<p><b>Current Status:</b> Included in Towny.jar.</p>
-		<p><b>Future Status:</b> EventWar will be removed as of the 0.97.3.0 release of Towny. Look forward to the release of EventWar.jar. See discord for details.</p>
+		<p><b>Current Status:</b> A separate EventWar.jar available to people who Sponsor LlmDl.</p>
+		<p><b>Old EventWar:</b> <a href="oldeventwar.html">For the EventWar included in Towny versions older than 0.97.3.0 please review the legacy documentation.</a></p>
       </div>
 	</div>	
     <div class="row" style="margin-top: 2%;">
 	  <div class="twelve columns">
 		<div style="background-color:#f2f2f2; border-radius:10px; padding:10px; margin-bottom: 5%">
-			<h4>Introduction/Game-play:</h4>
-				Event War consists of a server-wide war, where every nation which has at least one mutually-enemy (both nations are enemied towards each other,) is added into a war over townblocks' "HP" and killing Mayors and Kings, which results in a monetary reward.<br><br>
-	
-				Event War can be completely non-destructive, with no transfer of land to the victors, no transfering of Towns to conquering Nations, and no griefing in claimed land (even with the explosion-revert enabled.)<br><br>
-				
-				Or, Event War can be a punishing, Towns-stealing-land, Nations-conquering-Towns, greif-fest. Event War is entirely configurable.<br><br>
-				
-				Event War makes use of Towny's explosion-revert-system inside of Towns, allowing for TNT and TNT cannons to be used freely, with blocks regenerating after 60 seconds.<br>
-				Event War also makes generous use of the Towny Jail plots, players killed in enemy territory will be transferred to the enemy jail to live as a POW (prisoner-of-war.)
-				Jail breaks will occur either via explosives opening a wall, or the Jail plot's HP being dropped to 0.<br><br>
-				
-				Event War begins with every townblock owned by Towns in the Nations involved gaining a HP stat. Homeblocks can have a larger HP than normal TownBlocks. Enemy players will lower the HP if they out-number the Allied players in the townblock.
-				Allied players outnumbering the enemies will result in the TownBlock gaining HP (if healing isn't disabled in the config.) When a TownBlock is dropped to 0 HP is it permanently removed from the war. It can be configured so that the winning Town gains the TownBlock permanently.<br><br>
 			
-				A Town can be knocked out of a war when their Home Block falls or if their Mayor is killed. A Nation can be knocked out of a war if its capital city is knocked out of the war, or if the King is killed. Points in war given for the following:
+			<h5>Introduction/Game-play:</h5>
+			<div style="padding:20px;">
+				The new Event War is a hyper-configurable system supporting 5 basic war types:
 				<ul>
-					<li>A enemy killed: 1 </li>
-					<li>A townblock stolen: 1 </li>
-					<li>A town knocked out of the war: 10 </li>
-					<li>A nation knocked out of the war: 100 </li>
+					<li>Riot - One town fighting amongst itself. Players side with the city or the rioters via team selection.</li> 
+					<li>Town vs Town - Two towns fight against each other.</li>
+					<li>Civil War - One nation fighting amongst itself. Towns side with the capital or the rebels via team selection.</li>
+					<li>Nation vs Nation - Two nations fight against each other.</li>
+					<li>World War - All nations with enemies will be thrown into war. Similar to the old EventWar.</li>
 				</ul>
 				
-				Event War ends when there is only one nation who's Home Block has not been conquered or when the admin toggles war off. Although the townblocks are restored at the end of war, the damage from any griefing is permanent.
-				<br><br>
-			<h4>Feature Breakdown:</h4>
-			<ul>
-				<li><b>/towny war hud:</b> Useful during war is the <code>/towny war hud</code> command which will make a scoreboard appear for the player, which details points and properties of the townblock they are standing in.</li>
-				<li><b>/towny war participants {page #}:</b> Also useful is the <code>/towny war participants {page #}</code> command. It shows a list of towns and their nation who are in the war event.The list highlights enemies, allies and capital towns. While war is in effect, each competing town has a health points property attached to it.</li>
-				<li><b>is_jailing_attacking_enemies:</b> When players are killed in a town where they are considered to be enemies in the war, they may be sent to the town's Jail. This is configurable at <code>jail.is_jailing_attacking_enemies: 'false'</code>. If the jail plot is attacked and has its HP reduced to 0, any prisoners-of-war imprisoned there will be let free in a 'jailbreak'. POWs are also freed if the town they are kept in falls out of the war.</li>
-				<li><b>price_nation_neutrality:</b> Nations can also pay a daily Neutrality cost to avoid taking part in a war. The cost of neutrality is set in the config.yml using <code>price_nation_neutrality: 100.0</code>. In this example, a nation would pay 100 dollars from its nationbank each 'Towny Day'. <code>/n toggle neutral</code> will set the status.</li>
-				<li><b>warning_delay:</b> The amount of time in seconds on the event war countdown, begun after using <code>/ta toggle war</code>.</li>
-				<li><b>towns_are_neutral:</b> During war Nations fight each other. Towns without a nation are not included, cannot score points and cannot have their townblocks griefed. The config has the option <code>towns_are_neutral: 'true'</code> if you would like nation-less towns to still be able to fight and be attacked (but still not score points.)</li>
-				<li><b>only_attack_borders:</b> When true, only plots bordering the wilderness and fallen townblocks can be attacked. This prevents players going in to directly attack a homeblock.</li>
-				<li><b>healable:</b> When true, allies can heal TownBlocks' HP stat.</li>
-				<li><b>firework_on_attacked:</b> When a townblock is under attack, fireworks appear above. Red for damage, red creeperhead for a won townblock, and green when a townblock is being healed by a defender. Fireworks can be turned off in the config at <code>war.event.plots.firework_on_attacked</code>.</li>
-				<li><b>remove_on_monarch_death:</b> When true, if a mayor is killed their Town is taken out of the Event War. If that mayor is the king of a Nation, that nation will also be removed from the war.</li>
-				<li><b>allow_block_griefing</b> If you would like to bybass the WarzoneBlockPermissions fine-grained approach and allow anyone to do anything during war you can set the the config's <code>war.event.allow_block_griefing</code> option to true.</li>
-				<li><b>town_block_hp:</b> the HP stat of normal TownBlocks.</li>
-				<li><b>home_block_hp:</b> the HP stat of Town homeblocks.</li>
-				<li><b>base_spoils:</b> The amount which is added to the War Chest at the start of each Event War.</li>
-				<li><b>wartime_town_block_loss_price:</b> This amount is taken from the losing town for each plot lost. If it cannot be paid, the town is removed from the war.</li>
-				<li><b>price_death_wartime:</b> This amount is taken from the player if they die during the event. If it cannot be paid, the Town is removed from the war.</li>
-				<li><b>costs_townblocks:</b> If set to true when a town drops an enemy townblock's HP to 0, the attacking town gains a bonus townblock, and the losing town gains a negative (-1) bonus townblock.</li>
-				<li><b>winner_takes_ownership_of_townblocks:</b> If set to true when a town drops an enemy townblock's HP to 0, the attacking town takes full control of the townblock. One available (bonus) claim is given to the victorious town, one available (bonus) claim is removed from the losing town. Will not have any effect if war.event.winner_takes_ownership_of_town is set to true.</li>
-				<li><b>winner_takes_ownership_of_town:</b> If set to true when a town knocks another town out of the war, the losing town will join the winning town's nation. The losing town will enter a conquered state and be unable to leave the nation until the conquered time has passed.</li>
-				<li><b>conquer_time:</b> The number of Towny new days until a conquered town loses its conquered status and can use <code>/n leave</code>.
-				<li><b>min_height:</b> When enemies are below this Y-level, they do not count as attackers.</li>
-				<li><b>Warzone Block Permissions:</b> Event War allows for a great deal of customizability when it comes to griefing. The config's <code>editable_materials</code> applies to Event War and Flag War. This means you may set which blocks can be placed and broken by players in the war. By default that list includes: <code>tnt,fence,ladder,wood_door,iron_door,fire</code>. Switch, Item_use, Fire and Explosion protections can be overriden during Event War as well. <code>explosions_break_blocks</code> & <code>explosions_regen_blocks: 'true'</code> will determine whether the explosions break blocks and whether the explosion will regenerate or if the griefing is permanent. The <code>explosions_ignore_list</code> is a configurable list of blocks which will not explode.</li>
+				Wars are begun by an admin using <code>/ta war {wartype} ...</code> or via town-purchased Declaration of War books.<br><br>
+				Declarations of War are purchased via Tokens using <code>/town redeem {wartype}</code>.<br><br>
+				Tokens are earned by every non-neutral town each Towny newday.
+			</div> 
+			
+			<h5>Hyper-Configurable:</h5>
+			<div style="padding:20px;">
+				Each war type has the following configurable settings:
+				<ul>
+					<li>Token Cost - How many tokens does a Declaration of War of this type cost. </li>
+					<li>Base Spoils - How much money is put up for grabs to be won.</li>
+					<li>Cooldown Time - How much time must pass since the towns' last war (of any type) before they can take part in a war of this type.</li>
+					<li>Startup Delay - How much time before a war is begun, does the action start, for a war of this type.</li>
+					<li>TownBlock HP - Whether a war of this type uses the TownBlock HP system. [Not applicable to Riot wars.]</li>
+					<li>Resident Lives - How many lives does a resident get at the start of the war.</li>
+					<li>Mayor Lives - How many lives does a mayor get at the start of the war.</li>
+					<li>Mayor Death - If a mayor runs out of lives, does that remove their town from the war.</li>
+					<li>Town Conquering - Does a war result in the winning side conquering the losing side. The outcome is different for each war type:</li>
+					<ul>
+						<li>Riot - If rioters win, their highest scorer will become the new mayor.</li>
+						<li>Town vs Town - The losing town will be merged into the winning town.</li>
+						<li>Civil War - If the rebels win, the highest scorer will become the new capital of the nation.</li>
+						<li>Nation vs Nation - Towns which are knocked out of the war will join the conquering nation.</li>
+						<li>World War - Towns which are knocked out of the war will join the conquering nation.</li
+					</ul>
+				</ul>
+					 
+				Wars can allow for block-griefing. Breakable and placeable blocks operate on a whitelist.<br><br>
+				Itemuse, Switch, Fire, Explosions can also be forced on in war-stricken towns.<br><br>
+				Explosions can be made to revert, allowing for explosive wall-smashing, jail-breaking action that repairs itself after 60 seconds.<br><br>
+				Points for kills, townblocks won, towns removed, and nations removed are all configurable.
+			</div>
 
-			</ul>
+			<h5>Jails and Prisoners of War:</h5>
+			<div style="padding:20px;">
+				EventWar makes generous use of the Towny Jail plots, players killed in enemy territory will be transferred to the town's primary jail 
+				(falling back to other jails if the primary jail has lost its HP,) to live as a POW (prisoner-of-war.)<br><br>
+				In riot wars, players are unjailed if they can leave the jail plot. In other war types they must exit the town's land.<br><br>
+				Jailbreaks occur when a jail's HP is dropped to zero and all prisoners are freed.<br><br>
+				While jailed, players are unable to score kills, lose their lives or damage townblock HP's.
+			</div>				
+			
+			<h5>Lore:</h5>
+			<div style="padding:20px;">
+				Event War is heavy in lore. Books are generated and given to players when wars start, when they end, and on every hour. 
+				They act as a permanent record for your players to store in their town libraries and museums.<br><br>
+				
+				Start-of-War books detail who is involved in the war, the rules by which they are fought and the consequences of victory and failure. 
+				Your warconfig.yml's settings determine what goes into the books.<br><br>
+				
+				Hourly update books show players who is still in the fight and where the scores stand.<br><br>
+				
+				End-of-War books finalize the outcomes of the war, informing players who has survived, providing for a historical document for the ages.     
+			</div>
+			
+			<h5>Declaration of War Books:</h5>
+			<div style="padding:20px;">
+				Declaration of War books are how players start wars. These books are purchased for Tokens using the <code>/town redeem</code> command.<br><br>
+				By default riots DoW books cost the least, with the costs increasing as the scopes of the wars increase as well.<br><br>
+				This means that riots and town wars will happen more often than civil wars, nation wars and world wars.<br><br>
+				An option exists in the warconfig: <code>are_declarations_of_war_usable_only_by_their_creators</code> which limits DoWs to only be used by the town which 
+				purchased the book. When this is set to false, it is possible for towns to purchase DoW books and then give them to other towns. This means powerful
+				nations can foment wars in other towns to destabilize them.<br><br>
+				Declaration of War books are used by holding the book and using the <code>/declare war [wartype] [arg]</code> command, this is documented in the books themselves.
+			</div>
+			
+			<h5>TownBlock HP Sytem:</h5>
+			<div style="padding:20px;">
+				When a war type has the TownBlockHP system enabled all of the townblocks in each warring town are given an HP amount. 
+				By default normal townblocks have 60 and homeblocks have 120 hp.<br><br>
+				HP is lowered when attackers are stood in the townblock, and the attackers outnumber any allies of the town being attacked.<br><br>
+				Optionally, townblock HPs can be healed when the allies outnumber the attackers.<br><br>
+				Townblocks must be attacked from the edge of town, inwards towards the town's homeblock.<br><br>
+				When townblocks are attacked, fireworks appear in the air above.<br><br>
+				There is a configurable minimum height that players must be in the world to be considered an attacker.</br><br>
+				If a jail plot has its HP dropped to zero, all of the prisoners of war will be unjailed in a prison break, 
+				and the jail will no longer be usable for the duration of the war. 
+			</div>
+			
+			<h5>End conditions:</h5>
+			<div style="padding:20px;">
+				Wars can be ended by the following conditions:
+				<ul>
+					<li>A Riot will be ended if:</li>
+					<ul>
+						<li>All of the surviving rioters are in Jail.</li>
+						<li>All of the players on either side run out of lives</li>
+						<li>The mayor is killed and mayordeath is enabled for riots.</li>
+					</ul>
+					<li>A town can be knocked out of a war in the following ways:</li>
+					<ul>
+						<li>A town has its homeblock fall to 0hp (when the TownBlockHP system is enabled.)</li>
+						<li>A mayor runs out of lives and the mayordeath option is enabled for the wartype.</li>
+						<li>A towns' residents collectively lose all their lives.</li>
+						<li>A town cannot pay the death costs because their town bank has no money (when using_economy is true.)</li>
+					</ul>
+					<li>A nation can be knocked out of a war in the following ways:</li>
+					<ul>
+						<li>A nation's king runs out of lives and mayordeath is enabled for the wartype.</li>
+						<li>A nation's capital city is knocked out of the war.</li>
+						<li>A nation's towns are all removed from the war.
+					</ul>
+					<li>A civil war will end if:</li> 
+					<ul>
+						<li>The capital city is removed from the war.</li>
+						<li>All the towns oneither side is removed from the war.</li>
+					</ul>
+					<li>A world war will end if there are no nations which consider each other enemies left in the war</li>  
+				</ul>
+			</div>
+			
+			<h5>Commands:</h5>
+			<div style="padding:20px;">
+				<ul>
+					<li><b>/towny war</b></li>
+					<ul>
+						<li><b>/towny war hud:</b> Opens a scoreboard for the player, which details points and properties of the townblock they are standing in.</li>
+						<li><b>/towny war participants {page #}:</b> A list of towns and their nation who are in each on-going war. The list highlights enemies, allies and capital towns. 
+						While war is in effect, each competing town has a health points property attached to it.</li>
+						<li><b>/towny war stats:</b> Shows stats on the player's current war.</li>
+						<li><b>/towny war scores:</b> Shows the scores of the player's current war.</li>
+						<li><b>/towny war types:</b> Shows the settings of various war types (mainly for debugging now.)</li>
+					</ul>
+					<li><b>/town</b></li>
+					<ul>
+						<li><b>/town redeem {wartype}:</b> Used to purchase a Declaration of War of the given war type.</li> 
+					</ul>
+					<li><b>/declare</b></li>
+					<ul>
+						<li><b>/declare rebel:</b> Used to side with the rioters/rebels in Riot and Civil Wars.</li>
+						<li><b>/declare government:</b> Used to side with the city/capital in Riot and Civil Wars.</li>
+						<li><b>/declare war {wartype} {args}:</b> Used while holding a Declaration of War book of the given war type, to start a war.</li> 
+					</ul>
+					<li><b>/townyadmin war</b></li>
+					<ul>
+						<li><b>/ta war riot [town]:</b> Used to start a riot in the given town.</li>
+						<li><b>/ta war townwar [town] [town]:</b> Used to start a townwar between the given towns.</li>
+						<li><b>/ta war civilwar [nation]:</b> Used to start a civilwar in the given nation.</li>
+						<li><b>/ta war nationwar [nation] [nation]:</b> Used to start a nationwar between the given nations.</li>
+						<li><b>/ta war worldwar:</b> Used to start a worldwar.</li>
+						<li><b>/ta war endwar [warname]:</b> Used to end a war.</li>
+						<li><b>/ta war tokens [townname] [add|remove|set] #:</b> admin command to manipulate a town's token count.</li>
+						<li><b>/ta war list:</b> Lists all the active.</li>
+						<li><b>/ta war purge:</b> Completely removes EventWar metadata from the Towny database and cleans out all EventWar war data.</li>
+					</ul>
+				</ul>
+			</div>
 		</div>
 	  </div>	
 	</div>
