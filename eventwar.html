@@ -54,7 +54,7 @@
 			</ul>
 	  </div>
 	  <div class="seven columns" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
-		<p><b>Current Status:</b> A separate EventWar.jar available to people who Sponsor LlmDl.</p>
+		<p><b>Current Status:</b> A separate EventWar.jar available to people who <a href=https://github.com/sponsors/LlmDl>Sponsor LlmDl</a>.</p>
 		<p><b>Old EventWar:</b> <a href="oldeventwar.html">For the EventWar included in Towny versions older than 0.97.3.0 please review the legacy documentation.</a></p>
       </div>
 	</div>	
@@ -62,63 +62,60 @@
 	  <div class="twelve columns">
 		<div style="background-color:#f2f2f2; border-radius:10px; padding:10px; margin-bottom: 5%">
 			
-			<h5>Introduction/Game-play:</h5>
+			<center><h5>Introduction/Game-play:</h5></center>
 			<div style="padding:20px;">
 				The new Event War is a hyper-configurable system supporting 5 basic war types:
-				<ul>
-					<li>Riot - One town fighting amongst itself. Players side with the city or the rioters via team selection.</li> 
-					<li>Town vs Town - Two towns fight against each other.</li>
-					<li>Civil War - One nation fighting amongst itself. Towns side with the capital or the rebels via team selection.</li>
-					<li>Nation vs Nation - Two nations fight against each other.</li>
-					<li>World War - All nations with enemies will be thrown into war. Similar to the old EventWar.</li>
-				</ul>
+				<div style="padding:10px;">
+					<ul>
+						<li>Riot - One town fighting amongst itself. Players side with the city or the rioters via team selection.</li> 
+						<li>Town vs Town - Two towns fight against each other.</li>
+						<li>Civil War - One nation fighting amongst itself. Towns side with the capital or the rebels via team selection.</li>
+						<li>Nation vs Nation - Two nations fight against each other.</li>
+						<li>World War - All nations with enemies will be thrown into war. Similar to the old EventWar.</li>
+					</ul>
+				</div>
 				
 				Wars are begun by an admin using <code>/ta war {wartype} ...</code> or via town-purchased Declaration of War books.<br><br>
 				Declarations of War are purchased via Tokens using <code>/town redeem {wartype}</code>.<br><br>
-				Tokens are earned by every non-neutral town each Towny newday.
+				Tokens are earned by every non-neutral town each Towny newday.<br><br>
+				EventWars can be configured to be just a simple game of PVP with no lasting consequences but hurt pride, or it can be configured to involve
+				devastating griefing, and conquering of towns and nations. That's all up to the server.
 			</div> 
-			
-			<h5>Hyper-Configurable:</h5>
+			<hr>
+			<center><h5>Hyper-Configurable:</h5></center>
 			<div style="padding:20px;">
 				Each war type has the following configurable settings:
-				<ul>
-					<li>Token Cost - How many tokens does a Declaration of War of this type cost. </li>
-					<li>Base Spoils - How much money is put up for grabs to be won.</li>
-					<li>Cooldown Time - How much time must pass since the towns' last war (of any type) before they can take part in a war of this type.</li>
-					<li>Startup Delay - How much time before a war is begun, does the action start, for a war of this type.</li>
-					<li>TownBlock HP - Whether a war of this type uses the TownBlock HP system. [Not applicable to Riot wars.]</li>
-					<li>Resident Lives - How many lives does a resident get at the start of the war.</li>
-					<li>Mayor Lives - How many lives does a mayor get at the start of the war.</li>
-					<li>Mayor Death - If a mayor runs out of lives, does that remove their town from the war.</li>
-					<li>Town Conquering - Does a war result in the winning side conquering the losing side. The outcome is different for each war type:</li>
+				<div style="padding:10px;">
 					<ul>
-						<li>Riot - If rioters win, their highest scorer will become the new mayor.</li>
-						<li>Town vs Town - The losing town will be merged into the winning town.</li>
-						<li>Civil War - If the rebels win, the highest scorer will become the new capital of the nation.</li>
-						<li>Nation vs Nation - Towns which are knocked out of the war will join the conquering nation.</li>
-						<li>World War - Towns which are knocked out of the war will join the conquering nation.</li>
+						<li>Token Cost - How many tokens does a Declaration of War of this type cost. </li>
+						<li>Base Spoils - How much money is put up for grabs to be won.</li>
+						<li>Cooldown Time - How much time must pass since the towns' last war (of any type) before they can take part in a war of this type.</li>
+						<li>Startup Delay - How much time before a war is begun, does the action start, for a war of this type.</li>
+						<li>TownBlock HP - Whether a war of this type uses the TownBlock HP system. [Not applicable to Riot wars.]</li>
+						<li>Resident Lives - How many lives does a resident get at the start of the war.</li>
+						<li>Mayor Lives - How many lives does a mayor get at the start of the war.</li>
+						<li>Mayor Death - If a mayor runs out of lives, does that remove their town from the war.</li>
+						<li>Town Conquering - Does a war result in the winning side conquering the losing side. The outcome is different for each war type:</li>
+						<ul>
+							<li>Riot - If rioters win, their highest scorer will become the new mayor.</li>
+							<li>Town vs Town - The losing town will be merged into the winning town.</li>
+							<li>Civil War - If the rebels win, the highest scorer will become the new capital of the nation.</li>
+							<li>Nation vs Nation - Towns which are knocked out of the war will join the conquering nation.</li>
+							<li>World War - Towns which are knocked out of the war will join the conquering nation.</li>
+						</ul>
+						<li>Build & Destroy Editable Materials - Decides whether a war will allow the build/destroy of the WarZone Block Protection's editable_materials list.</li>
+						<li>Switch Use - Decides if switches are enabled for the given war type.</li>
+						<li>Item Use - Decides if item_use is enabled for the given war type.</li>
+						<li>Points Per Kill - Decides how many points are given per kill.</li> 
 					</ul>
-					<li>Build & Destroy Editable Materials - Decides whether a war will allow the build/destroy of the WarZone Block Protection's editable_materials list.</li>
-					<li>Switch Use - Decides if switches are enabled for the given war type.</li>
-					<li>Item Use - Decides if item_use is enabled for the given war type.</li>
-					<li>Points Per Kill - Decides how many points are given per kill.</li> 
-				</ul>
+				</div>
 					 
 				Fire, Explosions can also be forced on in war-stricken towns.<br><br>
 				Explosions can be made to revert, allowing for explosive wall-smashing, jail-breaking action that repairs itself after 60 seconds.<br><br>
 				Points townblocks won, towns removed, and nations removed are all configurable.
 			</div>
-
-			<h5>Jails and Prisoners of War:</h5>
-			<div style="padding:20px;">
-				EventWar makes generous use of the Towny Jail plots, players killed in enemy territory will be transferred to the town's primary jail 
-				(falling back to other jails if the primary jail has lost its HP,) to live as a POW (prisoner-of-war.)<br><br>
-				In riot wars, players are unjailed if they can leave the jail plot. In other war types they must exit the town's land.<br><br>
-				Jailbreaks occur when a jail's HP is dropped to zero and all prisoners are freed.<br><br>
-				While jailed, players are unable to score kills, lose their lives or damage townblock HP's.
-			</div>				
-			
-			<h5>Lore:</h5>
+			<hr>
+			<center><h5>Lore:</h5></center>
 			<div style="padding:20px;">
 				Event War is heavy in lore. Books are generated and given to players when wars start, when they end, and on every hour. 
 				They act as a permanent record for your players to store in their town libraries and museums.<br><br>
@@ -130,8 +127,8 @@
 				
 				End-of-War books finalize the outcomes of the war, informing players who has survived, providing for a historical document for the ages.     
 			</div>
-			
-			<h5>Declaration of War Books:</h5>
+			<hr>
+			<center><h5>Declaration of War Books:</h5></center>
 			<div style="padding:20px;">
 				Declaration of War books are how players start wars. These books are purchased for Tokens using the <code>/town redeem</code> command.<br><br>
 				By default riots DoW books cost the least, with the costs increasing as the scopes of the wars increase as well.<br><br>
@@ -141,8 +138,8 @@
 				nations can foment wars in other towns to destabilize them.<br><br>
 				Declaration of War books are used by holding the book and using the <code>/declare war [wartype] [arg]</code> command, this is documented in the books themselves.
 			</div>
-			
-			<h5>TownBlock HP Sytem:</h5>
+			<hr>
+			<center><h5>TownBlock HP Sytem:</h5></center>
 			<div style="padding:20px;">
 				When a war type has the TownBlockHP system enabled all of the townblocks in each warring town are given an HP amount. 
 				By default normal townblocks have 60 and homeblocks have 120 hp.<br><br>
@@ -154,40 +151,51 @@
 				If a jail plot has its HP dropped to zero, all of the prisoners of war will be unjailed in a prison break, 
 				and the jail will no longer be usable for the duration of the war. 
 			</div>
-			
-			<h5>End conditions:</h5>
+			<hr>
+			<center><h5>Jails and Prisoners of War:</h5></center>
+			<div style="padding:20px;">
+				EventWar makes generous use of the Towny Jail plots, players killed in enemy territory will be transferred to the town's primary jail 
+				(falling back to other jails if the primary jail has lost its HP,) to live as a POW (prisoner-of-war.)<br><br>
+				In riot wars, players are unjailed if they can leave the jail plot. In other war types they must exit the town's land.<br><br>
+				Jailbreaks occur when a jail's HP is dropped to zero and all prisoners are freed.<br><br>
+				While jailed, players are unable to score kills, lose their lives or damage townblock HP's.
+			</div>	
+			<hr>
+			<center><h5>End conditions:</h5></center>
 			<div style="padding:20px;">
 				Wars can be ended by the following conditions:
-				<ul>
-					<li>A Riot will be ended if:</li>
+				<div style="padding:10px;">
 					<ul>
-						<li>All of the surviving rioters are in Jail.</li>
-						<li>All of the players on either side run out of lives</li>
-						<li>The mayor is killed and mayordeath is enabled for riots.</li>
+						<li>A Riot will be ended if:</li>
+						<ul>
+							<li>All of the surviving rioters are in Jail.</li>
+							<li>All of the players on either side run out of lives</li>
+							<li>The mayor is killed and mayordeath is enabled for riots.</li>
+						</ul>
+						<li>A town can be knocked out of a war in the following ways:</li>
+						<ul>
+							<li>A town has its homeblock fall to 0hp (when the TownBlockHP system is enabled.)</li>
+							<li>A mayor runs out of lives and the mayordeath option is enabled for the wartype.</li>
+							<li>A towns' residents collectively lose all their lives.</li>
+							<li>A town cannot pay the death costs because their town bank has no money (when using_economy is true.)</li>
+						</ul>
+						<li>A nation can be knocked out of a war in the following ways:</li>
+						<ul>
+							<li>A nation's king runs out of lives and mayordeath is enabled for the wartype.</li>
+							<li>A nation's capital city is knocked out of the war.</li>
+							<li>A nation's towns are all removed from the war.
+						</ul>
+						<li>A civil war will end if:</li> 
+						<ul>
+							<li>The capital city is removed from the war.</li>
+							<li>All the towns oneither side is removed from the war.</li>
+						</ul>
+						<li>A world war will end if there are no nations which consider each other enemies left in the war</li>  
 					</ul>
-					<li>A town can be knocked out of a war in the following ways:</li>
-					<ul>
-						<li>A town has its homeblock fall to 0hp (when the TownBlockHP system is enabled.)</li>
-						<li>A mayor runs out of lives and the mayordeath option is enabled for the wartype.</li>
-						<li>A towns' residents collectively lose all their lives.</li>
-						<li>A town cannot pay the death costs because their town bank has no money (when using_economy is true.)</li>
-					</ul>
-					<li>A nation can be knocked out of a war in the following ways:</li>
-					<ul>
-						<li>A nation's king runs out of lives and mayordeath is enabled for the wartype.</li>
-						<li>A nation's capital city is knocked out of the war.</li>
-						<li>A nation's towns are all removed from the war.
-					</ul>
-					<li>A civil war will end if:</li> 
-					<ul>
-						<li>The capital city is removed from the war.</li>
-						<li>All the towns oneither side is removed from the war.</li>
-					</ul>
-					<li>A world war will end if there are no nations which consider each other enemies left in the war</li>  
-				</ul>
+				</div>
 			</div>
-			
-			<h5>Commands:</h5>
+			<hr>
+			<center><h5>Commands:</h5></center>
 			<div style="padding:20px;">
 				<ul>
 					<li><b>/towny war</b></li>
