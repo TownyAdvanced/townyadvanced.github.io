@@ -90,6 +90,7 @@
 						<li>Token Cost - How many tokens does a Declaration of War of this type cost. </li>
 						<li>Base Spoils - How much money is put up for grabs to be won.</li>
 						<li>Cooldown Time - How much time must pass since the towns' last war (of any type) before they can take part in a war of this type.</li>
+						<li>Max Time Duration - An optional maximum duration for a war, in case no other win-conditions are met.</li>
 						<li>Startup Delay - How much time before a war is begun, does the action start, for a war of this type.</li>
 						<li>TownBlock HP - Whether a war of this type uses the TownBlock HP system. [Not applicable to Riot wars.]</li>
 						<li>Resident Lives - How many lives does a resident get at the start of the war.</li>
@@ -106,7 +107,10 @@
 						<li>Build & Destroy Editable Materials - Decides whether a war will allow the build/destroy of the WarZone Block Protection's editable_materials list.</li>
 						<li>Switch Use - Decides if switches are enabled for the given war type.</li>
 						<li>Item Use - Decides if item_use is enabled for the given war type.</li>
-						<li>Points Per Kill - Decides how many points are given per kill.</li> 
+						<li>Points Per Kill - Decides how many points are given per kill.</li>
+						<li>Neutrality Allowed - Whether neutral towns/nations are able to bypass a war.</li>
+						<li>Minimum Online - A minimum number of people required to be online for the war type to begin.</li>
+						<li>Minimum Online Ignores Low Pop - Whether the min-online is disabled when dealing with a low-pop town or nation which has 100% of its resident online.</li>
 					</ul>
 				</div>
 					 
@@ -190,6 +194,7 @@
 							<li>The capital city is removed from the war.</li>
 							<li>All the towns oneither side is removed from the war.</li>
 						</ul>
+						<li>Each war type has an optional, configurable max-duration, to keep wars from going on indefinitely.</li> 
 						<li>A world war will end if there are no nations which consider each other enemies left in the war</li>  
 					</ul>
 				</div>
