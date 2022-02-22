@@ -77,7 +77,8 @@
 				
 				Wars are begun by an admin using <code>/ta war {wartype} ...</code> or via town-purchased Declaration of War books.<br><br>
 				Declarations of War are purchased via Tokens using <code>/town redeem {wartype}</code>.<br><br>
-				Tokens are earned by every non-neutral town each Towny newday.<br><br>
+				Tokens are earned by every non-neutral town each Towny newday. If a town is part of a nation that nation must not be neutral either. 
+				Towns with an active war will also not receive war tokens.<br><br>
 				EventWars can be configured to be just a simple game of PVP with no lasting consequences but hurt pride, or it can be configured to involve
 				devastating griefing, and conquering of towns and nations. That's all up to the server.
 			</div> 
@@ -137,6 +138,7 @@
 				Declaration of War books are how players start wars. These books are purchased for Tokens using the <code>/town redeem</code> command.<br><br>
 				By default riots DoW books cost the least, with the costs increasing as the scopes of the wars increase as well.<br><br>
 				This means that riots and town wars will happen more often than civil wars, nation wars and world wars.<br><br>
+				A town must be a part of a nation to redeem their tokens for civil war, nation war and world wars books.<br><br>
 				An option exists in the warconfig: <code>are_declarations_of_war_usable_only_by_their_creators</code> which limits DoWs to only be used by the town which 
 				purchased the book. When this is set to false, it is possible for towns to purchase DoW books and then give them to other towns. This means powerful
 				nations can foment wars in other towns to destabilize them.<br><br>
