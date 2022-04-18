@@ -80,7 +80,9 @@
 				Tokens are earned by every non-neutral town each Towny newday. If a town is part of a nation that nation must not be neutral either. 
 				Towns with an active war will also not receive war tokens.<br><br>
 				EventWars can be configured to be just a simple game of PVP with no lasting consequences but hurt pride, or it can be configured to involve
-				devastating griefing, and conquering of towns and nations. That's all up to the server.
+				devastating griefing, and conquering of towns and nations. That's all up to the server.<br><br>
+				
+				<center><strong>You can see how your server is configured using the '/eventwar guide' command.</strong></center>
 			</div> 
 			<hr>
 			<center><h5>Hyper-Configurable:</h5></center>
@@ -92,6 +94,7 @@
 						<li>Base Spoils - How much money is put up for grabs to be won.</li>
 						<li>Cooldown Time - How much time must pass since the towns' last war (of any type) before they can take part in a war of this type.</li>
 						<li>Max Time Duration - An optional maximum duration for a war, in case no other win-conditions are met.</li>
+						<li>Surrender Allowed - Is surrendering allowed?</li>
 						<li>Startup Delay - How much time before a war is begun, does the action start, for a war of this type.</li>
 						<li>TownBlock HP - Whether a war of this type uses the TownBlock HP system. [Not applicable to Riot wars.]</li>
 						<li>Resident Lives - How many lives does a resident get at the start of the war.</li>
@@ -158,6 +161,21 @@
 				and the jail will no longer be usable for the duration of the war. 
 			</div>
 			<hr>
+			<center><h5>Surrendering:</h5></center>
+			<div style="padding:20px;">
+				When a war type allows surrendering, players are able to decide if they can give up.<br><br>
+				For Riot, CivilWar and WorldWar types, the player uses /surrender.<br>
+				Riots allow for anyone to surrender. CivilWar only allows a mayor to surrender their town. WorldWar only allows a king to surrender their nation.<br>
+				If Riot wars have town conquering enabled, and the Mayor is the one surrendering, their Town will be taken over by the Rebel with the highest score.<br>
+				If CivilWar has town conquering enabled, and the King is the one surrendering, the rebel Town with the highest score will become the new Capital.<br><br>
+				For TownWar and NationWar, it is more complicated. The town or nation that wishes to give in must create an offer.
+				This offer can be for a WhitePeace (nothing,) Money, Towns or Money & Towns combined.<br>
+				The offer is then sent to the mayor or king on the opposite side for their approval. 
+				If accepted the war is over and any money or towns is exchanged.<br>
+				In TownWars, the surrendering Town can only offer itself in surrender, to be merged into the victorious Town.<br>
+				In NationWars, the surrendering Nation can offer itself or any of its Towns in surrender, to be conquered by the victorious Nation.<br><br>
+			</div>
+			<hr>
 			<center><h5>Jails and Prisoners of War:</h5></center>
 			<div style="padding:20px;">
 				EventWar makes generous use of the Towny Jail plots, players killed in enemy territory will be transferred to the town's primary jail 
@@ -177,6 +195,7 @@
 							<li>All of the surviving rioters are in Jail.</li>
 							<li>All of the players on either side run out of lives</li>
 							<li>The mayor is killed and mayordeath is enabled for riots.</li>
+							<li>The mayor surrenders, or either side's remaining players surrender.</li>
 						</ul>
 						<li>A town can be knocked out of a war in the following ways:</li>
 						<ul>
@@ -184,20 +203,26 @@
 							<li>A mayor runs out of lives and the mayordeath option is enabled for the wartype.</li>
 							<li>A towns' residents collectively lose all their lives.</li>
 							<li>A town cannot pay the death costs because their town bank has no money (when using_economy is true.)</li>
+							<li>A town makes a surrender offer which is accepted.</li>
 						</ul>
 						<li>A nation can be knocked out of a war in the following ways:</li>
 						<ul>
 							<li>A nation's king runs out of lives and mayordeath is enabled for the wartype.</li>
 							<li>A nation's capital city is knocked out of the war.</li>
 							<li>A nation's towns are all removed from the war.
+							<li>A nation makes a surrender offer which is accepted.</li>
 						</ul>
 						<li>A civil war will end if:</li> 
 						<ul>
 							<li>The capital city is removed from the war.</li>
 							<li>All the towns oneither side is removed from the war.</li>
+							<li>The king surrenders, or either side's remaining towns surrender.</li>
+						</ul>
+						<li>A world war will end if:</li> 
+						<ul>
+							<li>There is only one Nation left, or all of the remaining Nations consider each other Allies.</li>
 						</ul>
 						<li>Each war type has an optional, configurable max-duration, to keep wars from going on indefinitely.</li> 
-						<li>A world war will end if there are no nations which consider each other enemies left in the war</li>  
 					</ul>
 				</div>
 			</div>
@@ -238,6 +263,13 @@
 						<li><b>/declare rebel:</b> Used to side with the rioters/rebels in Riot and Civil Wars.</li>
 						<li><b>/declare government:</b> Used to side with the city/capital in Riot and Civil Wars.</li>
 						<li><b>/declare war {wartype} {args}:</b> Used while holding a Declaration of War book of the given war type, to start a war.</li> 
+					</ul>
+					<li><b>/surrender</b></li>
+					<ul>
+						<li><b>/surrender:</b> Used to surrender in Riots, Civil Wars and World Wars.</li>
+						<li><b>/surrender money {amount}:</b> Used in Town and Nation Wars to surrender for money.</li>
+						<li><b>/surrender towns {town1 town2 town3}:</b> Used in Town and Nation Wars to surrender for towns.</li>
+						<li><b>/surrender money {amount} towns {town1 town2 town3}:</b> Used in Town and Nation Wars to surrender for money and towns.</li> 
 					</ul>
 					<li><b>/townyadmin war</b></li>
 					<ul>
