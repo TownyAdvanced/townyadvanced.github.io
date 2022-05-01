@@ -97,6 +97,7 @@
 						<li>Surrender Allowed - Is surrendering allowed?</li>
 						<li>Startup Delay - How much time before a war is begun, does the action start, for a war of this type.</li>
 						<li>TownBlock HP - Whether a war of this type uses the TownBlock HP system. [Not applicable to Riot wars.]</li>
+						<li>TownBlock Switch Towns - Whether a war of this type has TownBlocks that are dropped to 0HP switch to the conquering Towns. [Not applicable to Riot and Civil wars.]</li>
 						<li>Resident Lives - How many lives does a resident get at the start of the war.</li>
 						<li>Mayor Lives - How many lives does a mayor get at the start of the war.</li>
 						<li>Mayor Death - If a mayor runs out of lives, does that remove their town from the war.</li>
@@ -156,9 +157,11 @@
 				Optionally, townblock HPs can be healed when the allies outnumber the attackers.<br><br>
 				Townblocks must be attacked from the edge of town, inwards towards the town's homeblock.<br><br>
 				When townblocks are attacked, fireworks appear in the air above.<br><br>
-				There is a configurable minimum height that players must be in the world to be considered an attacker.</br><br>
+				There is a configurable minimum height that players must be in the world to be considered an attacker.<br><br>
 				If a jail plot has its HP dropped to zero, all of the prisoners of war will be unjailed in a prison break, 
-				and the jail will no longer be usable for the duration of the war. 
+				and the jail will no longer be usable for the duration of the war.<br><br>
+				If the War allows it, TownBlocks can switch Towns when they are dropped to 0hp. See the /eventwar guide [wartype] to
+				learn if this is enabled on your server for TownWar, NationWar or WorldWar. It is not available for Riots or CivilWars.
 			</div>
 			<hr>
 			<center><h5>Surrendering:</h5></center>
