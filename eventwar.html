@@ -32,19 +32,19 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-    <div class="row" style="margin-top: 2%; padding:10px">
-      <div class="two-thirds column" style="margin-top: 5%; align:left">
-      	<h3>Towny Advanced Portal</h3>
-      </div>
-      <div class="one-third column" style="margin-top: 5%; align:right">
-        <a href="index.html"><img src="images/townyicon.png" align=right style="border-radius:10px"></a>
-      </div>      
-    </div>
+	<div class="row" style="margin-top: 2%; padding:10px">
+	  <div class="two-thirds column" style="margin-top: 5%; align:left">
+	  	<h3>Towny Advanced Portal</h3>
+	  </div>
+	  <div class="one-third column" style="margin-top: 5%; align:right">
+		<a href="index.html"><img src="images/townyicon.png" align=right style="border-radius:10px"></a>
+	  </div>
+	</div>
 	<hr>
-    <div class="row">
+	<div class="row">
 	  <div class="twelve columns" style="border-radius:10px">
 		<h3>> <a href="wars.html">War Hub</a> \ Event War</h3>
-      </div>
+	  </div>
 	</div>
 	<div class="row">
 	  <div class="five columns" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
@@ -56,9 +56,9 @@
 	  <div class="seven columns" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
 		<p><b>Current Status:</b> A separate EventWar.jar available to people who <a href=https://github.com/sponsors/LlmDl>Sponsor LlmDl</a>.</p>
 		<p><b>Old EventWar:</b> <a href="oldeventwar.html">For the EventWar included in Towny versions older than 0.97.3.0 please review the legacy documentation.</a></p>
-      </div>
+	  </div>
 	</div>	
-    <div class="row" style="margin-top: 2%;">
+	<div class="row" style="margin-top: 2%;">
 	  <div class="twelve columns">
 		<div style="background-color:#f2f2f2; border-radius:10px; padding:10px; margin-bottom: 5%">
 			
@@ -134,7 +134,7 @@
 				
 				Hourly update books show players who is still in the fight and where the scores stand.<br><br>
 				
-				End-of-War books finalize the outcomes of the war, informing players who has survived, providing for a historical document for the ages.     
+				End-of-War books finalize the outcomes of the war, informing players who has survived, providing for a historical document for the ages.	 
 			</div>
 			<hr>
 			<center><h5>Declaration of War Books:</h5></center>
@@ -293,6 +293,32 @@
 				</ul>
 			</div>
 			<hr>
+			<center><h5>Permissions:</h5></center>
+			<div style="padding:20px;">
+			For the most part EventWar has no permissions you need to configure, but some things require towny.admin or op.<br><br>
+			
+			There is one node locking away the use of /townyadmin war's sub-commands:<br><br>
+			<ul>
+				<li><b>eventwar.admin</b></li>
+				<ul>
+					<li>default: op</li>
+					<li>child nodes:</li>
+					<ul>
+						<li><b> towny.command.townyadmin.war.worldwar</b></li>
+						<li><b> towny.command.townyadmin.war.riot</b></li>
+						<li><b> towny.command.townyadmin.war.townwar</b></li>
+						<li><b> towny.command.townyadmin.war.civilwar</b></li>
+						<li><b> towny.command.townyadmin.war.nationwar</b></li>
+						<li><b> towny.command.townyadmin.war.list</b></li>
+						<li><b> towny.command.townyadmin.war.purge</b></li>
+						<li><b> towny.command.townyadmin.war.endwar</b></li>
+						<li><b> towny.command.townyadmin.war.tokens</b></li>
+						<li><b> towny.command.townyadmin.war.givelife</b></li>
+					</ul>
+				</ul>
+				</ul>
+			</div>
+			<hr>
 			<center><h5>PlaceholderAPI Placeholders:</h5></center>
 			<div style="padding:20px;">
 				<ul>
@@ -311,7 +337,7 @@
 	</div>
 	
 	
-    <div class="twelve column">
+	<div class="twelve column">
 		<br><br><br><br><br><hr>
 		<p align=center>Website powered by <a href="http://getskeleton.com">Skeleton</a></p>
 	</div>
