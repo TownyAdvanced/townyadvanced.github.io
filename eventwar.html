@@ -50,7 +50,7 @@
 	  <div class="five columns" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
 	  	<h4>Prerequisites:</h4>
 			<ul>
-				<li>Towny 0.98.0.0 or newer.</li>
+				<li>Towny 0.98.4.0 or newer.</li>
 			</ul>
 	  </div>
 	  <div class="seven columns" style="background-color:#f2f2f2; border-radius:10px; padding:10px">
@@ -64,13 +64,14 @@
 			
 			<center><h5>Introduction/Game-play:</h5></center>
 			<div style="padding:20px;">
-				The new Event War is a hyper-configurable system supporting 5 basic war types:
+				The new Event War is a hyper-configurable system supporting 6 basic war types:
 				<div style="padding:10px;">
 					<ul>
 						<li>Riot - One town fighting amongst itself. Players side with the city or the rioters via team selection.</li> 
 						<li>Town vs Town - Two towns fight against each other.</li>
 						<li>Civil War - One nation fighting amongst itself. Towns side with the capital or the rebels via team selection.</li>
 						<li>Nation vs Nation - Two nations fight against each other.</li>
+						<li>Alliance vs Alliance - Two nations fight against each other, with both nations' allies joining the fight.</li>
 						<li>World War - All nations with enemies will be thrown into war. Similar to the old EventWar.</li>
 					</ul>
 				</div>
@@ -107,6 +108,7 @@
 							<li>Town vs Town - The losing town will be merged into the winning town.</li>
 							<li>Civil War - If the rebels win, the highest scorer will become the new capital of the nation.</li>
 							<li>Nation vs Nation - Towns which are knocked out of the war will join the conquering nation.</li>
+							<li>Alliance vs Alliance - Towns which are knocked out of the war will join the conquering nation.</li>
 							<li>World War - Towns which are knocked out of the war will join the conquering nation.</li>
 						</ul>
 						<li>Build & Destroy Editable Materials - Decides whether a war will allow the build/destroy of the WarZone Block Protection's editable_materials list.</li>
@@ -167,7 +169,7 @@
 			<center><h5>Surrendering:</h5></center>
 			<div style="padding:20px;">
 				When a war type allows surrendering, players are able to decide if they can give up.<br><br>
-				For Riot, CivilWar and WorldWar types, the player uses /surrender.<br><br>
+				For Riot, CivilWar, AllianceWar, and WorldWar types, the player uses /surrender.<br><br>
 				Riots allow for anyone to surrender. CivilWar only allows a mayor to surrender their town. WorldWar only allows a king to surrender their nation.<br><br>
 				If Riot wars have town conquering enabled, and the Mayor is the one surrendering, their Town will be taken over by the Rebel with the highest score.<br><br>
 				If CivilWar has town conquering enabled, and the King is the one surrendering, the rebel Town with the highest score will become the new Capital.<br><br>
@@ -215,10 +217,14 @@
 							<li>A nation's towns are all removed from the war.
 							<li>A nation makes a surrender offer which is accepted.</li>
 						</ul>
+						<li>A alliance war will end if:</li> 
+						<ul>
+    						<li>All the nations on either side are removed from the war.</li>
+						</ul>
 						<li>A civil war will end if:</li> 
 						<ul>
 							<li>The capital city is removed from the war.</li>
-							<li>All the towns oneither side is removed from the war.</li>
+							<li>All the towns on either side are removed from the war.</li>
 							<li>The king surrenders, or either side's remaining towns surrender.</li>
 						</ul>
 						<li>A world war will end if:</li> 
@@ -240,6 +246,7 @@
 						<li><b>/eventwar guide townwar:</b> Opens a book for the player, explaining town vs town wars.</li>
 						<li><b>/eventwar guide civilwar:</b> Opens a book for the player, explaining civil wars.</li>
 						<li><b>/eventwar guide nationwar:</b> Opens a book for the player, explaining nation wars.</li>
+						<li><b>/eventwar guide alliancewar:</b> Opens a book for the player, explaining alliance wars.</li>
 						<li><b>/eventwar guide worldwar:</b> Opens a book for the player, explaining world wars.</li>
 						<li><b>/eventwar guide conquering:</b> Opens a book for the player, explaining how conquering works.</li>
 						<li><b>/eventwar guide townblocks:</b> Opens a book for the player, explaining how the TownBlock HP system works.</li>
@@ -269,7 +276,7 @@
 					</ul>
 					<li><b>/surrender</b></li>
 					<ul>
-						<li><b>/surrender:</b> Used to surrender in Riots, Civil Wars and World Wars.</li>
+						<li><b>/surrender:</b> Used to surrender in Riots, Civil Wars, Alliance Wars, and World Wars.</li>
 						<li><b>/surrender money {amount}:</b> Used in Town and Nation Wars to surrender for money.</li>
 						<li><b>/surrender towns {town1 town2 town3}:</b> Used in Town and Nation Wars to surrender for towns.</li>
 						<li><b>/surrender money {amount} towns {town1 town2 town3}:</b> Used in Town and Nation Wars to surrender for money and towns.</li> 
@@ -280,6 +287,7 @@
 						<li><b>/ta war townwar [town] [town]:</b> Used to start a townwar between the given towns.</li>
 						<li><b>/ta war civilwar [nation]:</b> Used to start a civilwar in the given nation.</li>
 						<li><b>/ta war nationwar [nation] [nation]:</b> Used to start a nationwar between the given nations.</li>
+						<li><b>/ta war alliancewar [nation] [nation]:</b> Used to start a alliancewar between the given nations, and their allies.</li>
 						<li><b>/ta war worldwar:</b> Used to start a worldwar.</li>
 						<li><b>/ta war endwar [warname]:</b> Used to end a war.</li>
 						<li><b>/ta war tokens [townname] [add|remove|set] #:</b> admin command to manipulate a town's token count.</li>
@@ -309,6 +317,7 @@
 						<li><b> towny.command.townyadmin.war.townwar</b></li>
 						<li><b> towny.command.townyadmin.war.civilwar</b></li>
 						<li><b> towny.command.townyadmin.war.nationwar</b></li>
+						<li><b> towny.command.townyadmin.war.alliancewar</b></li>
 						<li><b> towny.command.townyadmin.war.list</b></li>
 						<li><b> towny.command.townyadmin.war.purge</b></li>
 						<li><b> towny.command.townyadmin.war.endwar</b></li>
@@ -327,6 +336,7 @@
 					<li>%eventwar_townwar_token_cost% - Displays how many tokens a townwar costs.</li>
 					<li>%eventwar_civilwar_token_cost% - Displays how many tokens a civilwar  costs.</li>
 					<li>%eventwar_nationwar_token_cost% - Displays how many tokens a nationwar costs.</li>
+					<li>%eventwar_alliancewar_token_cost% - Displays how many tokens a alliancewar costs.</li>
 					<li>%eventwar_worldwar_token_cost% - Displays how many tokens a worldwar costs.</li>
 					<li>%eventwar_player_townblock_hp% - Displays the HP of a townblock where the player is stood.</li>
 				</ul>
