@@ -96,6 +96,7 @@
 						<li>Base Spoils - How much money is put up for grabs to be won.</li>
 						<li>Cooldown Time - How much time must pass since the towns' last war (of any type) before they can take part in a war of this type.</li>
 						<li>Max Time Duration - An optional maximum duration for a war, in case no other win-conditions are met.</li>
+						<li>Winning Score - An optional high score, that when reached will cause the war to end when reached.</li>
 						<li>Surrender Allowed - Is surrendering allowed?</li>
 						<li>Startup Delay - How much time before a war is begun, does the action start, for a war of this type.</li>
 						<li>TownBlock HP - Whether a war of this type uses the TownBlock HP system. [Not applicable to Riot wars.]</li>
@@ -171,6 +172,16 @@
 				See the /eventwar guide [wartype] to learn if this is enabled on your server for TownWar, NationWar, AllianceWar or WorldWar. It is not available for Riots or CivilWars.
 			</div>
 			<hr>
+			<center><h5>BattleSessions:</h5></center>
+			<div style="padding:20px;">
+				An optional system available in EventWar, BattleSessions are configurabled per-day-of-the-week, allowing for multiple start times
+				after which fighting and scoring will count towards the server's wars.<br><br>
+				While the BattleSession is inactive, scoring points will not occur, townblocks cannot have their HP damaged, and PVP kills will not
+				count against the warring residents' available lives.<br><br>
+				Players can see when the the current BattleSession will end or when the next BattleSession will begin by using `/eventwar battlesession`.<br><br>
+				Players can turn on/off the BattleSession bossbar using the `/eventwar battlesession bossbar` command.
+			</div>	
+			<hr>
 			<center><h5>Surrendering:</h5></center>
 			<div style="padding:20px;">
 				When a war type allows surrendering, players are able to decide if they can give up.<br><br>
@@ -237,7 +248,15 @@
 						<ul>
 							<li>There is only one Nation left, or all of the remaining Nations consider each other Allies.</li>
 						</ul>
-						<li>Each war type has an optional, configurable max-duration, to keep wars from going on indefinitely.</li> 
+						<li>Each war type has an optional, configurable max-duration, to keep wars from going on indefinitely.</li>
+						<li>Alternatively, each war type can end if there is a winning score configured:</li>
+						<ul>
+							<li>When a town (or resident in Riots,) hits the winning score, the war will end and they will be declared the winner.</li>
+						</ul>
+						<li>Alternatively, each war type can end if there is a maximum duration configured:</li>
+						<ul>
+							<li>When the war's maximum duration is reached, the town (or resident in Riots,) with the highest score will be declared the winner.</li>
+						</ul>
 					</ul>
 				</div>
 			</div>
@@ -259,8 +278,11 @@
 						<li><b>/eventwar guide townblocks:</b> Opens a book for the player, explaining how the TownBlock HP system works.</li>
 						<li><b>/eventwar guide money:</b> Opens a book for the player, explaining how money affects wars.</li>
 						<li><b>/eventwar guide winning:</b> Opens a book for the player, explaining how to win wars.</li>
+						<li><b>/eventwar guide battlesession:</b> Opens a book for the player, explaining how battle sessions work.</li>
 						<li><b>/eventwar guide points:</b> Opens a book for the player, explaining how points are scored.</li>
 						<li><b>/eventwar guide jails:</b> Opens a book for the player, explaining how jails and PoWs work.</li>
+						<li><b>/eventwar battlesession:</b> Shows players information about the current or next-scheduled battle session.</li>
+						<li><b>/eventwar battlesession bossbar:</b> Allows the player to turn on or off the battle session boss bar.</li>
 					</ul>
 					<li><b>/towny war</b></li>
 					<ul>
@@ -370,6 +392,8 @@
 				<li>War Starts</li>
 				<li>War Surrenders</li>
 				<li>War Ends</li>
+				<li>BattleSession Starts</li>
+				<li>BattleSession Ends</li>
 			</ul>
 			</div>
 		</div>
