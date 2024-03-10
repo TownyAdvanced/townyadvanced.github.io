@@ -115,6 +115,7 @@
 							<li>Alliance vs Alliance - Towns which are knocked out of the war will join the conquering nation.</li>
 							<li>World War - Towns which are knocked out of the war will join the conquering nation.</li>
 						</ul>
+						<li>Occupational Control - Available to Town vs Town and Nation vs Nation wars. A system that allows winning towns/nations to edit their vanquished towns' (and nation capital's,) residents and mayor.</li>
 						<li>Build & Destroy Editable Materials - Decides whether a war will allow the build/destroy of the WarZone Block Protection's editable_materials list.</li>
 						<li>Switch Use - Decides if switches are enabled for the given war type.</li>
 						<li>Item Use - Decides if item_use is enabled for the given war type.</li>
@@ -180,6 +181,22 @@
 				count against the warring residents' available lives.<br><br>
 				Players can see when the the current BattleSession will end or when the next BattleSession will begin by using `/eventwar battlesession`.<br><br>
 				Players can turn on/off the BattleSession bossbar using the `/eventwar battlesession bossbar` command.
+			</div>
+			<hr>
+			<center><h5>Occupational Control:</h5></center>
+			<div style="padding:20px;">
+				This is a system available to TownWar and NationWar. It is available only when enabled in the war type's config section, and town conquering is disabled.<br><br>
+				It is meant to act as a half-way point between no-conquering and conquering.<br><br>
+				When a town loses a TownWar, their town becomes Occupationally Controlled.<br><br>
+				When a nation loses a NationWar, their nation becomes Occupationally Controlled.<br><br>
+				While Occupational Control is in effect the leaders of the victorious town or nation has a number of (optional) available actions:<br><br>
+				<ul>
+				<li>Altering residents - A town (or nation capital) can have residents added and removed.</li>
+				<li>Changing mayors - A town (or nation capital) can have the mayor (or nation leader) changed.</li>
+				</ul>
+				Occupational Control lasts for a configurable amount of time.<br><br>
+				While conquering would destroy a vanquished town by merging the town into the winning town, (and destroy a nation when the last town is changed over to the winning nation,)
+				Occupational Control leaves the losing town and nation intact, although under signficant control.<br><br>
 			</div>	
 			<hr>
 			<center><h5>Surrendering:</h5></center>
@@ -278,6 +295,7 @@
 						<li><b>/eventwar guide alliancewar:</b> Opens a book for the player, explaining alliance wars.</li>
 						<li><b>/eventwar guide worldwar:</b> Opens a book for the player, explaining world wars.</li>
 						<li><b>/eventwar guide conquering:</b> Opens a book for the player, explaining how conquering works.</li>
+						<li><b>/eventwar guide occupationalcontrol:</b> Opens a book for the player, explaining how occupational control work.</li>
 						<li><b>/eventwar guide townblocks:</b> Opens a book for the player, explaining how the TownBlock HP system works.</li>
 						<li><b>/eventwar guide money:</b> Opens a book for the player, explaining how money affects wars.</li>
 						<li><b>/eventwar guide winning:</b> Opens a book for the player, explaining how to win wars.</li>
@@ -298,12 +316,24 @@
 					</ul>
 					<li><b>/town</b></li>
 					<ul>
-						<li><b>/town redeem {wartype}:</b> Used to purchase a Declaration of War of the given war type.</li> 
+						<li><b>/town redeem {wartype}:</b> Used to purchase a Declaration of War of the given war type.</li>
+						<li><b>/town occupation</b> Shows players who occupies their town, and for how long, or the /town occupation help.</li>
+						<li><b>/town occupation list</b> Shows a list of towns your town occupies.</li>
+						<li><b>/town occupation {townname} info</b> Shows information about one town which you occupy.</li>
+						<li><b>/town occupation {townname} setmayor {playername}</b> Sets the occupied town's mayor.</li>
+						<li><b>/town occupation {townname} resident add {playername}</b> Adds a resident to the occupied town.</li>
+						<li><b>/town occupation {townname} resident remove {playername}</b> Removes a resident from the occupied town.</li>
 					</ul>
 					<li><b>/nation</b></li>
 					<ul>
 						<li><b>/nation alliancewar request {allyname}:</b> The primary nations battling in an Alliance War can use this command to request their allies 
 						join the war (when they are not already automatically added.)</li> 
+						<li><b>/nation occupation</b> Shows players who occupies their nation, and for how long, or the /nation occupation help.</li>
+						<li><b>/nation occupation list</b> Shows a list of towns your town occupies.</li>
+						<li><b>/nation occupation {nationname} info</b> Shows information about one nation which you occupy.</li>
+						<li><b>/nation occupation {nationname} setking {playername}</b> Sets the occupied nation capital's mayor.</li>
+						<li><b>/nation occupation {nationname} resident add {playername}</b> Adds a resident to the occupied nation capital.</li>
+						<li><b>/nation occupation {nationname} resident remove {playername}</b> Removes a resident from the occupied nation capital.</li>
 					</ul>
 					<li><b>/declare</b></li>
 					<ul>
@@ -331,6 +361,10 @@
 						<li><b>/ta war tokens [townname] [add|remove|set] #:</b> admin command to manipulate a town's token count.</li>
 						<li><b>/ta war list:</b> Lists all the active.</li>
 						<li><b>/ta war purge:</b> Completely removes EventWar metadata from the Towny database and cleans out all EventWar war data.</li>
+						<li><b>/ta war settownoccupied {town1} {town2}</b> Sets town1 occupied by town2.</li>
+						<li><b>/ta war settownoccupied {occupiedtown} false</b> Removes occupation status from town.</li>
+						<li><b>/ta war setnationoccupied {nation1} {nation2}</b> Sets nation1 occupied by nation2.</li>
+						<li><b>/ta war setnationoccupied {occupiednation} false</b> Removes occupation status from nation.</li>
 					</ul>
 					<li><b>/townyadmin reload</b></li>
 					<ul>
@@ -367,6 +401,8 @@
 						<li><b> towny.command.townyadmin.war.endwar</b></li>
 						<li><b> towny.command.townyadmin.war.tokens</b></li>
 						<li><b> towny.command.townyadmin.war.givelife</b></li>
+						<li><b> towny.command.townyadmin.war.settownoccupied</b></li>
+						<li><b> towny.command.townyadmin.war.setnationoccupied</b></li>
 					</ul>
 				</ul>
 				</ul>
