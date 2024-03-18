@@ -164,6 +164,24 @@
 				Optionally, townblock HPs can be healed when the allies outnumber the attackers.<br><br>
 				Townblocks must be attacked from the edge of town, inwards towards the town's homeblock.<br><br>
 				When townblocks are attacked, fireworks appear in the air above.<br><br>
+				<ul>
+				To help players discern what can be attacked Event War will make use of a BossBar. In the bossbar you will see 4 stats:<br>
+				<li> Attackable/Non-Attackable: Starting from the edge of town and working progressively inwards, plots that are Attackable can have their HP lowered.</li>
+				<li> TownBlock/HomeBlock: You will see if it is a normal townblock, or the town's vital homeblock.</li>
+				<li> HP remaining: The amount of HP remaining.</li>
+				<li> HP change: The amount that the HP has gone up or down by.</li>
+				</ul>
+				The boss bar is automatically shown when a player moves into a town with an active war, in which the TownBlockHP system is in use.<br><br> 
+				<ul>
+				Additionally, if you have installed <a href="https://www.spigotmc.org/resources/96927/">DecentHolograms</a> your players will see Holograms on each TownBlock, showing:<br>
+				<li> HP remaining: The amount of HP remaining.</li>
+				<li> A coloured wool block with three meanings:</li>
+					<ul>
+					<li> Green wool: The townblock is attackable.</li>
+					<li> Yellow wool: The townblock is not attackable yet.</li>
+					<li> Red wool: The townblock has fallen and has no HP left.</li>
+					</ul>
+				</ul>
 				There is a configurable minimum height that players must be in the world to be considered an attacker.<br><br>
 				If a jail plot has its HP dropped to zero, all of the prisoners of war will be unjailed in a prison break, 
 				and the jail will no longer be usable for the duration of the war.<br><br>
@@ -307,7 +325,7 @@
 					</ul>
 					<li><b>/towny war</b></li>
 					<ul>
-						<li><b>/towny war hud:</b> Opens a scoreboard for the player, which details points and properties of the townblock they are standing in.</li>
+						<li><b>/towny war hud:</b> Opens a scoreboard for the player, which details their points, top scores and recent scores.</li>
 						<li><b>/towny war participants {page #}:</b> A list of towns and their nation who are in each on-going war. The list highlights enemies, allies and capital towns. 
 						While war is in effect, each competing town has a health points property attached to it.</li>
 						<li><b>/towny war stats:</b> Shows stats on the player's current war.</li>
