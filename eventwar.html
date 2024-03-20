@@ -153,6 +153,8 @@
 				An option exists in the warconfig: <code>are_declarations_of_war_usable_only_by_their_creators</code> which limits DoWs to only be used by the town which 
 				purchased the book. When this is set to false, it is possible for towns to purchase DoW books and then give them to other towns. This means powerful
 				nations can foment wars in other towns to destabilize them.<br><br>
+				Declaration of War books are used to rename the war which will be created by them. While holding their DOW book, a player can run the <code>/declare setwarname {namehere}</code> command.
+				Using an empty name will cause the war name to be removed, making the war choose an automatically-generated name.<br><br>
 				Declaration of War books are used by holding the book and using the <code>/declare war [wartype] [arg]</code> command, this is documented in the books themselves.
 			</div>
 			<hr>
@@ -357,7 +359,9 @@
 					<ul>
 						<li><b>/declare rebel:</b> Used to side with the rioters/rebels in Riot, Civil and Independence Wars.</li>
 						<li><b>/declare government:</b> Used to side with the city/capital in Riot, Civil and Independence Wars.</li>
-						<li><b>/declare war {wartype} {args}:</b> Used while holding a Declaration of War book of the given war type, to start a war.</li> 
+						<li><b>/declare war {wartype} {args}:</b> Used while holding a Declaration of War book of the given war type, to start a war.</li>
+						<li><b>/declare setwarname {name}:</b> Used while holding a Declaration of War book, to customize the name of the war which will be created.
+						An empty name will unset the custom name.</li>  
 					</ul>
 					<li><b>/surrender</b></li>
 					<ul>
