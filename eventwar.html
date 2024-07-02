@@ -399,11 +399,32 @@
 			<div style="padding:20px;">
 			For the most part EventWar has no permissions you need to configure, but some things require towny.admin or op.<br><br>
 			
-			One node you must give to mayors (and other town ranks that are similar to mayors):
+			Two node you must give to mayors (and other town ranks that are similar to mayors):
 			<ul>
 			<li><b>towny.command.town.redeem</b> - Used to redeem wartokens for Declaration of War books.
+			<li><b>eventwar.command.declare.*</b> - User is able to use /declare EventWar commands, such as starting wars, setting their name.
+			<ul>
+				<li>default: op</li>
+				<li>child nodes:</li>
+				<ul>
+					<li><b> eventwar.command.declare.war.riot</b></li>
+					<li><b> eventwar.command.declare.war.townwar</b></li>
+					<li><b> eventwar.command.declare.war.civilwar</b></li>
+					<li><b> eventwar.command.declare.war.independencewar</b></li>
+					<li><b> eventwar.command.declare.war.nationwar</b></li>
+					<li><b> eventwar.command.declare.war.alliancewar</b></li>
+					<li><b> eventwar.command.declare.war.worldwar</b></li>
+					<li><b> eventwar.command.declare.setwarname</b></li>
+				</ul>
 			</ul>
-			
+			</ul>
+
+			<b>These can be given easily by running two commands in your server console:
+			<ul>
+			<li>ta townyperms group towns.mayor addperm towny.command.town.redeem
+			<li>ta townyperms group towns.mayor addperm eventwar.command.declare.*
+			</ul>
+
 			There is one node locking away the use of /townyadmin war's sub-commands:<br><br>
 			<ul>
 				<li><b>eventwar.admin</b></li>
