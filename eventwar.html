@@ -205,10 +205,10 @@
 			<hr>
 			<center><h5>Occupational Control:</h5></center>
 			<div style="padding:20px;">
-				This is a system available to TownWar and NationWar. It is available only when enabled in the war type's config section, and town conquering is disabled.<br><br>
+				This is a system available to TownWar, NationWar, and AllianceWar. It is available only when enabled in the war type's config section, and town conquering is disabled.<br><br>
 				It is meant to act as a half-way point between no-conquering and conquering.<br><br>
 				When a town loses a TownWar, their town becomes Occupationally Controlled.<br><br>
-				When a nation loses a NationWar, their nation becomes Occupationally Controlled.<br><br>
+				When a nation loses a NationWar or AllianceWar, their nation becomes Occupationally Controlled.<br><br>
 				While Occupational Control is in effect the leaders of the victorious town or nation has a number of (optional) available actions:<br><br>
 				<ul>
 				<li>Altering residents - A town (or nation capital) can have residents added and removed.</li>
@@ -336,13 +336,14 @@
 					</ul>
 					<li><b>/town</b></li>
 					<ul>
+						<li><b>/town list by wartokens:</b> Displays a list of towns sorted by their war tokens.</li>
 						<li><b>/town redeem {wartype}:</b> Used to purchase a Declaration of War of the given war type.</li>
-						<li><b>/town occupation</b> Shows players who occupies their town, and for how long, or the /town occupation help.</li>
-						<li><b>/town occupation list</b> Shows a list of towns your town occupies.</li>
-						<li><b>/town occupation {townname} info</b> Shows information about one town which you occupy.</li>
-						<li><b>/town occupation {townname} setmayor {playername}</b> Sets the occupied town's mayor.</li>
-						<li><b>/town occupation {townname} resident add {playername}</b> Adds a resident to the occupied town.</li>
-						<li><b>/town occupation {townname} resident remove {playername}</b> Removes a resident from the occupied town.</li>
+						<li><b>/town occupation:</b> Shows players who occupies their town, and for how long, or the /town occupation help.</li>
+						<li><b>/town occupation list:</b> Shows a list of towns your town occupies.</li>
+						<li><b>/town occupation {townname} info:</b> Shows information about one town which you occupy.</li>
+						<li><b>/town occupation {townname} setmayor {playername}:</b> Sets the occupied town's mayor.</li>
+						<li><b>/town occupation {townname} resident add {playername}:</b> Adds a resident to the occupied town.</li>
+						<li><b>/town occupation {townname} resident remove {playername}:</b> Removes a resident from the occupied town.</li>
 					</ul>
 					<li><b>/nation</b></li>
 					<ul>
